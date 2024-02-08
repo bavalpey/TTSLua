@@ -1,0 +1,33 @@
+{
+    "$schema": "https://raw.githubusercontent.com/LuaLS/LLS-Addons/main/schemas/addon_config.schema.json",
+    "name": "TTSLua",
+    "description": "Provides definitions for Tabletop Simulator's Lua API",
+    "settings": {
+        "files": ["Global%.%-1%.lua", ".+%.[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]%.lua$"],
+        "Lua.diagnostics.disable": ["lowercase-global"],
+        "Lua.runtime.version": "Lua 5.2",
+        "Lua.runtime.builtin": {
+            "basic": "enable",
+            "builtin": "enable",
+            "math": "enable",
+            "bit": "disable",
+            "bit32": "enable",
+            "coroutine": "enable",
+            "os": "enable",
+            "debug": "disable",
+            "ffi": "disable",
+            "io": "disable",
+            "jit": "disable",
+            "package": "disable",
+            "string": "enable",
+            "table": "enable",
+            "table.clear": "disable",
+            "table.new": "disable",
+            "utf8": "disable"
+          },
+          "Lua.diagnostics.globals": [
+            "_VERSION",
+            "_MOONSHARP"
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+---@meta Component
+
+---# Component
+---> ### Danger
+---> Component APIs are an advanced feature. An **understanding of how Unity works is required** to utilize them.
+---@class Component
+---@field game_object GameObject The GameObject the Component composes.	
+---@field name string The name of the Component.
+---@field get fun(name: string): any Obtains the value of a given Variable on a Component.
+---@field getVars fun():table<string, string> 	Returns a table mapping Var names (`string`) to their type, which is also represented as a (`string`).
+---@field set fun(name: string, value: any): bool Sets the Var of the specified `name` to the provided `value`.

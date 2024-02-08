@@ -1,0 +1,11 @@
+---@meta Material
+
+---# Material
+---
+---The Material of a Renderer [component](https://api.tabletopsimulator.com/components/component/) is the primary method of controlling that object's appearance.
+---@class Material
+---@field game_object GameObject The GameObject the Material is attached to.
+---@field shader string The name of the shader used by the Material.
+---@field get fun(name: string): any Obtains the value of a given Variable on a Material.
+---@field getVars fun():table<string, string> Returns a table mapping Var names (`string`) to their type, which is also represented as a `string`.
+---@field set fun(name: string, value: any): bool Sets toe Var of the specified `name` to the provided `value`.

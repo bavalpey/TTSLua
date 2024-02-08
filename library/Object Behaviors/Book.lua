@@ -1,0 +1,48 @@
+---@meta Book
+
+---The Book behavior is present on Custom PDF Objects. The Book behaviour allows you to manipulate the displayed PDF.
+---@class Book
+---The page numbers displayed in the Custom PDF UI are offset by this amount.
+--->### Info
+---> For example, if `page_offset` were set to 10, the first page in the UI would be 11, rather than 1. Negative numbers are accepted, and useful if a rule book contains a front cover, index etc. within the PDF file.
+---@field page_offset int
+---@field clearHighlight fun(): bool Clears the current highlight.
+---Gets the current page of the PDF
+---
+---*@param* `offsetPageNumbering` —
+---Indicates whether or not [page_offset](https://api.tabletopsimulator.com/behavior/book/#page_offset) should be applied to the page number returned.
+---<ul><ul><li>Optional, defaults to <code>false</code>.</li></ul></ul>
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/book/#getpage)
+---
+---@field getPage fun(offsetPageNumbering?: bool): int
+---Draws a highlight rectangle on the popout mode of the PDF at the given coordinates. Coordinates \(0,0\) are 
+---the lower left corner of the PDF, while coordinates \(1,1\) are the upper right corner.
+---
+---*@param* `x1` — x coordinate of the rectangle's left side.<br>
+---*@param* `x2` — x coordinate of the rectangle's right side.<br>
+---*@param* `y1` — y coordinate of the rectangle's left side.<br>
+---*@param* `y2` — y coordinate of the rectangle's right side.<br>
+---
+---### Example
+---Highlight the upper right quarter of a PDF
+--->```
+--->object.Book.setHighlight(0.5, 0.5, 1, 1)
+--->```
+---
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/book/#sethighlight)
+---@field setHighlight fun(x1: float, x2: float, y1: float, y2: float): bool
+---Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.
+---
+---*@param* `page` — The new page number.<br>
+---*@param* `offsetPageNumbering` —
+---Indicates whether or not [page_offset](https://api.tabletopsimulator.com/behavior/book/#page_offset) should be applied to the page number set.
+---<ul><ul><li>Optional, defaults to <code>false</code>.</li></ul></ul>
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/book/#setpage)
+---
+---@field setPage fun(page: int, offsetPageNumbering?: bool): bool

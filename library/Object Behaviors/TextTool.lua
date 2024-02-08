@@ -1,0 +1,3 @@
+---@meta TextTool
+
+---@class TextTool

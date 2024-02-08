@@ -1,0 +1,20 @@
+---@meta Counter
+
+---# Counter
+---The Counter behavior is present on the Counter object.
+---#### Example
+---Increment a counter's value.
+--->```
+--->object.Counter.increment()
+--->```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/counter/)
+---
+---@class Counter
+---@field clear fun():bool Resets Counter to 0.
+---@field decrement fun(): bool Reduces Counter's value by 1.
+---@field getValue fun(): int Returns Counter's current value. This function behaves the same as [Object's getValue()](https://api.tabletopsimulator.com/object/#getvalue).
+---@field increment fun(): bool
+---@field setValue fun(value: int): bool Sets the current value of the Counter. This function behaves the same as [Object's setValue()](https://api.tabletopsimulator.com/object/#setvalue).

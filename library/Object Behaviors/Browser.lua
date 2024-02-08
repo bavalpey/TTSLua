@@ -1,0 +1,12 @@
+---@meta Browser
+
+---The Browser behavior is present on the Tablet Object.
+---#### Example
+---Instruct a Tablet Object to load the Tabletop Simulator homepage.
+--->```
+--->object.Browser.url = "https://tabletopsimulator.com"
+--->```
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/browser/)
+---@class Browser
+---@field url string URL which currently wants to display.
+---@field pixel_width int The pixel width the browser is virtually rendering to.

@@ -1,0 +1,29 @@
+---@meta Clock
+
+---# Clock
+---The Clock behavior is present on the Digital Clock object.
+---## Clock Modes
+---- *Current Time*: Displays the current time of the host.
+---- *Stopwatch*: Displays a running count up.
+---- *Timer*: Displays a countdown and beeps once complete.
+---@class Clock
+---@field paused bool If the clock timer is paused.
+---@field getValue fun(): int Current time in stopwatch or timer mode. Clock mode returns 0. This function acts the same as [Object's getValue()](https://api.tabletopsimulator.com/object/#getvalue).
+---@field pauseStart fun(): bool Pauses/resumes a Clock in stopwatch or timer mode.
+---Set the timer to display a number of seconds. This function acts the same as [Object's setValue()](https://api.tabletopsimulator.com/object/#setvalue). 
+---If the Clock is not in timer mode, it will be switched. If it is in timer mode, it will be paused and the remaining time will be changed.
+---This will not start the countdown on its own.
+---
+---*@param* `seconds` — How many seconds will be counted down.
+---
+---```
+---self.Clock.setValue(30)
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/clock/#setvalue)
+---
+---@field setValue fun(seconds: int): bool
+---@field showCurrentTime fun(): bool Switches clock to display current time. It will clear any stopwatch or timer.
+---@field startStopwatch fun(): bool Switches clock to stopwatch, setting time to 0. It will reset time if already in stopwatch mode.

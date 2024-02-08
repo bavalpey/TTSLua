@@ -79,10 +79,4 @@ Object = {
 
 
 
----Adds force to an object in a directional Vector.
----@param vector Vector A Vector of the direction and magnitude of force.
----@param force_type force_type
-function Object:addForce(vector, force_type)
-end
-
 return Object

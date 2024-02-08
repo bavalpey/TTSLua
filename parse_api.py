@@ -20,27 +20,26 @@ def make_Objects(obj_dict):
     Returns:
         None
     """
-    funcspec = []
+    funcspec = list()
     for fun in obj_dict["functions"]:
         paramspec = []
         param_names = []
         if isinstance(fun, list):
-            funcspec.append(func_template.substitute)
+            funcspec.append(f"---{fun[2]}\n---@return {fun[1]}\nfunction Object.{fun[0]}() end")
+            continue
         for k, v in fun.items():
             fun_name, ret_type, comment, link = k
             if not (isinstance(v, list) and all(map(lambda x: isinstance(x, list), v))):
                 paramspec.append(f"---TODO: {v}")
             else:
                 for param in v:
-                    print(type(param))
-                    print(type(v))
                     paramspec.append(f"---@param {param[0]} {param[1]}")
                     param_names.append(param[0])
         else:
             "\n".join(paramspec)
             funcspec.append(
                 func_template.substitute(
-                    commentspec=comment,
+                    commentspec="---" + comment,
                     funName = fun_name,
                     returntype = ret_type,
                     urlspec=urlspec_template.substitute(relpath=link),
@@ -49,7 +48,7 @@ def make_Objects(obj_dict):
                     paramspec = "\n".join(paramspec)
                 )
             )
-    with open("Object.lua", "r") as outFile:
+    with open("Object.lua", "w") as outFile:
         outFile.write("\n\n".join(funcspec))
 
 
@@ -67,6 +66,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-class point()

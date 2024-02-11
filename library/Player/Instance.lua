@@ -128,7 +128,7 @@ function PlayerInstance.getHandObjects(hand_index) end
 
 ---Returns a Table of data on this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/).
 ---@param index int An index, representing which hand zone to return data on.
----@return Hand.Transform.Properties # The transform properties of the hand zone.
+---@return Hands.Transform.Properties # The transform properties of the hand zone.
 ---
 ---***
 ---
@@ -309,7 +309,7 @@ function PlayerInstance.setCameraMode(mode) end
 
 ---Sets transform elements of a [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/).
 ---
----@param parameters Hand.Transform.Parameters A table of parameters to transform the hand zone with.
+---@param parameters Hands.Transform.Parameters A table of parameters to transform the hand zone with.
 ---@param hand_index int An index, representing which hand zone to transform. *Optional, defaults to 1*
 ---@return bool
 ---

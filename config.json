@@ -19,7 +19,7 @@
             "io": "disable",
             "jit": "disable",
             "package": "disable",
-            "string": "enable",
+            "string": "disable",
             "table": "enable",
             "table.clear": "disable",
             "table.new": "disable",

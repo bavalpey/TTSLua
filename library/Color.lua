@@ -52,7 +52,6 @@ end
 
 ---Player colors
 
----@type Color
 Color.White = Color(1, 1, 1)
 Color.Brown = Color(0.443, 0.231, 0.09)
 Color.Red = Color(0.856, 0.1, 0.094)

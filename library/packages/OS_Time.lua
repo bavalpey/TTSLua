@@ -72,6 +72,53 @@ function os.date(format, time) end
 ---@nodiscard
 function os.difftime(t2, t1) end
 
+---@class osdateparam
+---
+---four digits
+---
+---
+---@field year  integer|string
+---
+---1-12
+---
+---
+---@field month integer|string
+---
+---1-31
+---
+---
+---@field day   integer|string
+---
+---0-23
+---
+---
+---@field hour  (integer|string)?
+---
+---0-59
+---
+---
+---@field min   (integer|string)?
+---
+---0-61
+---
+---
+---@field sec   (integer|string)?
+---
+---weekday, 1–7, Sunday is 1
+---
+---
+---@field wday  (integer|string)?
+---
+---day of the year, 1–366
+---
+---
+---@field yday  (integer|string)?
+---
+---daylight saving flag, a boolean
+---
+---
+---@field isdst boolean?
+
 ---
 ---Returns the current time when called without arguments, or a time representing the local date and time specified by the given table.
 ---

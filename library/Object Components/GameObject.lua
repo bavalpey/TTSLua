@@ -28,7 +28,7 @@
 ---
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/components/gameobject/)
----@class GameObject: Object
+---@class GameObject
 ---@field name string The name of the GameObject
 ---@field getChild fun(name: string):GameObject Returns a child GameObject matching the specified `name`.
 ---@field getChildren fun(name:string):GameObject[] Returns the list of children GameObjects.

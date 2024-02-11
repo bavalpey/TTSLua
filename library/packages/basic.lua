@@ -4,7 +4,7 @@
 ---
 ---Raises an error if the value of its argument v is false (i.e., `nil` or `false`); otherwise, returns all its arguments. In case of error, `message` is the error object; when absent, it defaults to `"assertion failed!"`
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-assert"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-assert)
 ---
 ---@generic T
 ---@param v? T
@@ -27,7 +27,7 @@ function assert(v, message, ...) end
 ---
 ---This function is a generic interface to the garbage collector. It performs different functions according to its first argument, `opt`.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-collectgarbage"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-collectgarbage)
 ---
 ---@param opt? gcoptions
 ---@param arg? integer
@@ -40,16 +40,16 @@ function collectgarbage(opt, arg) end
 ---Usually, `error` adds some information about the error position at the beginning of the message, if the message is a string.
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-error"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-error)
 ---
 ---@param message any
 ---@param level?  integer
 function error(message, level) end
 
 ---
----A global variable (not a function) that holds the global environment (see [§2.2](command:extension.lua.doc?["en-us/52/manual.html/2.2"])). Lua itself does not use this variable; changing its value does not affect any environment, nor vice versa.
+---A global variable (not a function) that holds the global environment (see [§2.2](https://www.lua.org/manual/5.2/manual.html#2.2)). Lua itself does not use this variable; changing its value does not affect any environment, nor vice versa.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-_G"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-_G)
 ---
 ---@class _G
 _G = {}
@@ -57,7 +57,7 @@ _G = {}
 ---
 ---If object does not have a metatable, returns nil. Otherwise, if the object's metatable has a __metatable field, returns the associated value. Otherwise, returns the metatable of the given object.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-getmetatable"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-getmetatable)
 ---
 ---@param object any
 ---@return table metatable
@@ -72,7 +72,7 @@ function getmetatable(object) end
 ---will iterate over the key–value pairs `(1,t[1]), (2,t[2]), ...`, up to the first absent index.
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-ipairs"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-ipairs)
 ---
 ---@generic T: table, V
 ---@param t T
@@ -89,7 +89,7 @@ function ipairs(t) end
 ---The behavior of `next` is undefined if, during the traversal, you assign any value to a non-existent field in the table. You may however modify existing fields. In particular, you may set existing fields to nil.
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-next"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-next)
 ---
 ---@generic K, V
 ---@param table table<K, V>
@@ -102,16 +102,16 @@ function next(table, index) end
 ---
 ---If `t` has a metamethod `__pairs`, calls it with t as argument and returns the first three results from the call.
 ---
----Otherwise, returns three values: the [next](command:extension.lua.doc?["en-us/52/manual.html/pdf-next"]) function, the table `t`, and `nil`, so that the construction
+---Otherwise, returns three values: the [next](https://www.lua.org/manual/5.2/manual.html#pdf-next) function, the table `t`, and `nil`, so that the construction
 ---```lua
 ---    for k,v in pairs(t) do body end
 ---```
 ---will iterate over all key–value pairs of table `t`.
 ---
----See function [next](command:extension.lua.doc?["en-us/52/manual.html/pdf-next"]) for the caveats of modifying the table during its traversal.
+---See function [next](https://www.lua.org/manual/5.2/manual.html#pdf-next) for the caveats of modifying the table during its traversal.
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-pairs"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-pairs)
 ---
 ---@generic T: table, K, V
 ---@param t T
@@ -123,7 +123,7 @@ function pairs(t) end
 ---Calls the function `f` with the given arguments in *protected mode*. This means that any error inside `f` is not propagated; instead, `pcall` catches the error and returns a status code. Its first result is the status code (a boolean), which is true if the call succeeds without errors. In such case, `pcall` also returns all results from the call, after this first result. In case of any error, `pcall` returns `false` plus the error object.
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-pcall"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-pcall)
 ---
 ---@param f     async fun(...):...
 ---@param arg1? any
@@ -134,11 +134,11 @@ function pairs(t) end
 function pcall(f, arg1, ...) end
 
 ---
----Receives any number of arguments and prints their values to `stdout`, converting each argument to a string following the same rules of [tostring](command:extension.lua.doc?["en-us/52/manual.html/pdf-tostring"]).
----The function print is not intended for formatted output, but only as a quick way to show a value, for instance for debugging. For complete control over the output, use [string.format](command:extension.lua.doc?["en-us/52/manual.html/pdf-string.format"]) and [io.write](command:extension.lua.doc?["en-us/52/manual.html/pdf-io.write"]).
+---Receives any number of arguments and prints their values to `stdout`, converting each argument to a string following the same rules of [tostring](https://www.lua.org/manual/5.2/manual.html#pdf-tostring).
+---The function print is not intended for formatted output, but only as a quick way to show a value, for instance for debugging. For complete control over the output, use [string.format](https://www.lua.org/manual/5.2/manual.html#pdf-string.format) and [io.write](https://www.lua.org/manual/5.2/manual.html#pdf-io.write).
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-print"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-print)
 ---
 ---@param ... any
 function print(...) end
@@ -146,7 +146,7 @@ function print(...) end
 ---
 ---Checks whether v1 is equal to v2, without invoking the `__eq` metamethod.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-rawequal"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-rawequal)
 ---
 ---@param v1 any
 ---@param v2 any
@@ -157,7 +157,7 @@ function rawequal(v1, v2) end
 ---
 ---Gets the real value of `table[index]`, without invoking the `__index` metamethod.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-rawget"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-rawget)
 ---
 ---@param table table
 ---@param index any
@@ -168,7 +168,7 @@ function rawget(table, index) end
 ---
 ---Returns the length of the object `v`, without invoking the `__len` metamethod.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-rawlen"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-rawlen)
 ---
 ---@param v table|string
 ---@return integer len
@@ -180,7 +180,7 @@ function rawlen(v) end
 ---This function returns `table`.
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-rawset"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-rawset)
 ---
 ---@param table table
 ---@param index any
@@ -191,7 +191,7 @@ function rawset(table, index, value) end
 ---
 ---If `index` is a number, returns all arguments after argument number `index`; a negative number indexes from the end (`-1` is the last argument). Otherwise, `index` must be the string `"#"`, and `select` returns the total number of extra arguments it received.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-select"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-select)
 ---
 ---@param index integer|"#"
 ---@param ...   any
@@ -228,10 +228,10 @@ function select(index, ...) end
 ---
 ---This function returns `table`.
 ---
----To change the metatable of other types from Lua code, you must use the debug library ([§6.10](command:extension.lua.doc?["en-us/52/manual.html/6.10"])).
+---To change the metatable of other types from Lua code, you must use the debug library ([§6.10](https://www.lua.org/manual/5.2/manual.html#6.10)).
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-setmetatable"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-setmetatable)
 ---
 ---@param table      table
 ---@param metatable? metatable|table
@@ -241,10 +241,10 @@ function setmetatable(table, metatable) end
 ---
 ---When called with no `base`, `tonumber` tries to convert its argument to a number. If the argument is already a number or a string convertible to a number, then `tonumber` returns this number; otherwise, it returns `fail`.
 ---
----The conversion of strings can result in integers or floats, according to the lexical conventions of Lua (see [§3.1](command:extension.lua.doc?["en-us/52/manual.html/3.1"])). The string may have leading and trailing spaces and a sign.
+---The conversion of strings can result in integers or floats, according to the lexical conventions of Lua (see [§3.1](https://www.lua.org/manual/5.2/manual.html#3.1)). The string may have leading and trailing spaces and a sign.
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-tonumber"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-tonumber)
 ---
 ---@overload fun(e: string, base: integer):integer
 ---@param e any
@@ -257,10 +257,10 @@ function tonumber(e) end
 ---
 ---If the metatable of `v` has a `__tostring` field, then `tostring` calls the corresponding value with `v` as argument, and uses the result of the call as its result. Otherwise, if the metatable of `v` has a `__name` field with a string value, `tostring` may use that string in its final result.
 ---
----For complete control of how numbers are converted, use [string.format](command:extension.lua.doc?["en-us/52/manual.html/pdf-string.format"]).
+---For complete control of how numbers are converted, use [string.format](https://www.lua.org/manual/5.2/manual.html#pdf-string.format).
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-tostring"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-tostring)
 ---
 ---@param v any
 ---@return string
@@ -281,7 +281,7 @@ function tostring(v) end
 ---Returns the type of its only argument, coded as a string. The possible results of this function are `"nil"` (a string, not the value `nil`), `"number"`, `"string"`, `"boolean"`, `"table"`, `"function"`, `"thread"`, and `"userdata"`.
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-type"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-type)
 ---
 ---@param v any
 ---@return type type
@@ -291,14 +291,14 @@ function type(v) end
 ---
 ---A global variable (not a function) that holds a string containing the running Lua version.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-_VERSION"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-_VERSION)
 ---
 _VERSION = "MOONSHARP 2.0.0.0"
 
 ---
 ---Calls function `f` with the given arguments in protected mode with a new message handler.
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-xpcall"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-xpcall)
 ---
 ---@param f     async fun(...):...
 ---@param msgh  function
@@ -316,7 +316,7 @@ function xpcall(f, msgh, arg1, ...) end
 ---```
 ---
 ---
----[View documents](command:extension.lua.doc?["en-us/52/manual.html/pdf-unpack"])
+---[View documents](https://www.lua.org/manual/5.2/manual.html#pdf-unpack)
 ---
 ---@generic T
 ---@param list T[]

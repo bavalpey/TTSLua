@@ -1,5 +1,7 @@
 ---@meta Timer
 
+---@diagnostic disable: deprecated
+
 ---@deprecated
 ---@class Timer
 --->### ⚡ Deprecated

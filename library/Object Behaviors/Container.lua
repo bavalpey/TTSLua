@@ -44,20 +44,20 @@ function Container.search(player, max_cards) end
 ---
 ---***
 ---
---->#### Example
---->Find a contained object with the name "Super Card" (within the Bag/Deck `object`), and use its index to
---->[take the object out](https://api.tabletopsimulator.com/object/#takeobject) of the container.
---->```
---->-- Iterate through each contained object
---->for _, containedObject in ipairs(object.getObjects()) do
---->    if containedObject.name == "Super Card" then
---->        object.takeObject({
---->            index = containedObject.index
---->        })
---->        break -- Stop iterating
---->    end
---->end
---->```
+---### Example Usage
+---Find a contained object with the name "Super Card" (within the Bag/Deck `object`), and use its index to
+---[take the object out](https://api.tabletopsimulator.com/object/#takeobject) of the container.
+---```
+----- Iterate through each contained object
+---for _, containedObject in ipairs(object.getObjects()) do
+---    if containedObject.name == "Super Card" then
+---        object.takeObject({
+---            index = containedObject.index
+---        })
+---        break -- Stop iterating
+---    end
+---end
+---```
 ---
 ---***
 ---

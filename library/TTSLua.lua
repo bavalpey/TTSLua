@@ -1,12 +1,10 @@
 ---@meta TTSLua
 
----@alias bool boolean
-
 ---@class (exact) float: number
 ---@class (exact) int: integer
 ---@class (exact) bool: boolean
 
----@type Object|GameObject
+---@type Object|Global
 self = ...
 
 ---The contents of _MOONSHARP which exposes some members specific to moonsharp

@@ -1,8 +1,7 @@
 ---@meta SnapPoints
 
----Information for snap points
+---# Information for snap points
 ---### ⚠️ This is an abstract class that is not a part of the official Tabletop Simulator API.
----@class SnapPoint
 
 ---@class SnapPoint.Properties
 ---[Local Position](https://api.tabletopsimulator.com/types/#position) of the snap point. When attached to an object,

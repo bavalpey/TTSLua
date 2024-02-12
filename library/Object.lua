@@ -550,7 +550,7 @@ function Object.clearInputs() end
 
 ---Creates a button on the object.
 ---
----@param parameters Button.Parameters A Table of parameters used to determine how the function will act.
+---@param parameters Button.Parameters.Create A Table of parameters used to determine how the function will act.
 ---@return bool
 ---
 ---***

@@ -2317,4 +2317,4 @@ function Object.setVar(var_name, value) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#setvectorlines)
 ---
-function Global.setVectorLines(lines) end
+function Object.setVectorLines(lines) end

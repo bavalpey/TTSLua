@@ -29,8 +29,6 @@ local PlayerInstance = {}
 ---@field object Object The object to attach the camera to.
 ---@field offset? Vector A Vector to offset the camera by. *Optional, defaults to {x=0, y=0, z=0}*
 
-
-
 ---Makes a Player's camera follow an object
 ---@param parameters AttachCameraToObjectParameters A table with parameters which guide the function.
 ---***

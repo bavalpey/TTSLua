@@ -1229,16 +1229,6 @@ function Object.setCustomObject(parameters) end
 ---
 function Object.setDescription(description) end
 
----The parameters to `setFogOfWarReveal` are a Table with these keys.
----
----All keys are optional; ommitting one will keep its current setting.
----@class FogOfWarRevealParameters
----@field reveal bool Whether the object reveals fog of war.
----The play colors that can see the revealed area. Setting this to "Black" or "All" will provide visibility to all
----players.
----@field color string
----@field range float How far from the Object the reveal effect reaches (radius, inches)
-
 
 ---Establish the settings and enable/disable an Object's revealing of
 ---[Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone).

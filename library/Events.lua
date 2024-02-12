@@ -71,3 +71,8 @@ local Events = {}
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/events/onblindfold/)
 function Events.onblindfold(player, blindfolded) end
+
+--[[
+---@type fun(player: Player, blindfolded: bool)
+onBlindfold = nil
+]]--

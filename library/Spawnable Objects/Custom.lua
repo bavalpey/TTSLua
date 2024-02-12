@@ -14,7 +14,6 @@
 ---@see Object.setCustomObject
 ---@class CustomObject
 
-
 ---# Custom AssetBundle
 
 ---@alias assetBundleType
@@ -32,6 +31,7 @@
 ---| 1 # Wood
 ---| 2 # Metal
 ---| 3 # Cardboard
+---| 4 # Glass ⚠️ Not officially documented, may not work!
 
 
 ---Properties for the Custom AssetBundle object.

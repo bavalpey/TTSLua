@@ -1,0 +1,148 @@
+---@meta SpawnObject
+
+
+---The parameters used by the `spawnObject()` function
+---
+---@see SpawnObject
+---@class SpawnObject.Parameters
+---[Built-in](https://api.tabletopsimulator.com/built-in-object/) or
+---[Custom Game Object](https://api.tabletopsimulator.com/custom-game-objects/) name.
+---@field type string
+---@field position? Vector Position where the object will be spawned. *Optional, defaults to `{0, 0, 0}`*
+---@field rotation? Vector Rotation of the spawned object. *Optional, defaults to `{0, 0, 0}`*
+---@field scale? Vector Scale of the spawned object. *Optional, defaults to `{1, 1, 1`}*
+---@field sound? bool Whether a sound will be played as the object spawns. *Optional, defaults to `true`*
+---Whether the object will snap to nearby grid lines or points on spawning. *Optional, defaults to `false`*
+---@field snap_to_grid? bool
+---Callback function to be called after the object has been spawned. *Optional, defaults to `nil`*
+---@field callback_function? fun(obj: Object):any
+
+
+---@class SpawnObjectData.Data.Transform
+---@field posX? float
+---@field posY? float
+---@field posZ? float
+---@field rotX? float
+---@field rotY? float
+---@field rotZ? float
+---@field scaleX? float
+---@field scaleY? float
+---@field scaleZ? float
+
+
+---@class SpawnObjectData.Data.CustomShader
+---@field CustomShader Color
+---@field SpecularIntensity float
+---@field SpecularSharpness int
+---@field FresnelStrength int
+
+---The properties of a custom mesh. See [Custom Model](https://kb.tabletopsimulator.com/custom-content/custom-model/) on
+---the knowledge base for more information.
+---@class SpawnObjectData.Data.CustomMesh
+---@field MeshUrl string The model for the 3D object
+---@field DiffuseUrl string The primary material for the object
+---@field ColliderUrl? string 
+---@field Convex? bool Whether the object is convex or not (i.e. a collider with holes)
+---@field MaterialIndex int The kind of material
+---@field TypeIndex assetBundleType The type of the model
+---@field CustomShader SpawnObjectData.Data.CustomShader 
+---@field CastShadows bool Whether the object casts shadows
+
+
+---@alias BagOrderEnum
+---| 0 # Last in First Out
+---| 1 # First in First Out
+---| 2 # Random
+
+---This is a **non-exhaustive** list of fields that can be set on the `data` field of the parameters table passed to
+---[spawnObjectData()](https://api.tabletopsimulator.com/object/#spawnobjectdata).
+---
+---Many defaults depend on the object type.
+---@see spawnObjectData
+---@class SpawnObjectData.Data
+---@field GUID? string ⚠️ You probably shouldn't set this field.  Let TTS assign it automatically.
+---@field Name? SpawnObjectType The internal name of the object (e.g. Calculator, rpg_BEAR).<br>&emsp;&emsp;⚠️ This is not the same as nickname.<br>&emsp;&emsp; ⚠️ You cannot spawn a Table
+---@field Transform? SpawnObjectData.Data.Transform
+---@field Nickname? string The nickname of the object that appears on its tooltip
+---@field Description? string The description of the object that appears on its tooltip *Defaults to an empty string*
+---@field GMNotes? string The GM notes of the object visible to the Black player *Defaults to an empty string*
+---@field AltLookAngle? Vector The alternate look angle of the object *Defaults to `{0, 0, 0}`*
+---@field ColorDiffuse? Color The diffuse color of the object.
+---@field LayoutGroupSortIndex? int The layout group sort index of the object *Defaults to `0`*
+---@field Value? any The value of the object. What this means depends on the type of object.
+---@field Locked? bool Whether the object should spawn locked *Defaults to false*
+---@field Grid? bool Whether the object should snap to grid lines or points *Defaults to false*
+---Whether the object should snap to [snap points](https://kb.tabletopsimulator.com/game-tools/snap-point-tool/)
+---@field Snap? bool
+---@field IgnoreFoW? bool Whether or not the object will remain visible when inside a Fog of War zone
+---When true, the object will automatically raise above other potential collisions and ignore collisions when held.
+---@field Autoraise? bool
+---@field DragSelectable? bool Whether the object should be included in drag-selections.
+---@field HideWhenFaceDown bool Whether the object should be hidden when face down (Usually meant for cards and tokens)
+---@field Hands? bool Whether the object should be able to enter player hands
+---@field Sticky? bool When true, picked up objects above this one will be attached to it.
+---@field Tooltip? bool Whether the object should show a tooltip *Default depends on the object type*
+---@field GridProjection? bool Whether the object should receive grid lines projected onto it. *Defaults to `false`*
+---@field Persistent? bool Whether the object should survive when new saves and mods are loaded. *Defaults to `false`*
+---Only valid for bags. The table containing a single key: Order, which determines how objects are taken out of the bag.
+---@field Bag? {Order: BagOrderEnum}
+---@field Memo? string The Memo on the object
+---@field LuaScript? string The Lua script on the object *Defaults to an empty string*
+---Whether the measure tool will automatically be used when moving the object. *Defaults to `false`*
+---@field MeasureMovement? bool
+---@field LuaScriptState string A json string for the Lua script state on the object *Defaults to an empty string*
+---@field XmlUI? string The string of the XML UI of the object *Defaults to an empty string*
+---@field RotationValues? {Value: int, Rotation: Vector}[] The rotation values on this object. *Defaults to an empty array*
+---@field ContainedObjects? SpawnObjectData.Data[] The contained objects in this object. *Defaults to an empty array*
+---The properties of the Mp3Player. ⚠️ Only valid for the Built-in MP3Player object.
+---@field Mp3Player? {songTitle: string, genre: string, volume: float, isPlaying: bool, loopOne: bool, menuTitle: string, menu: int}
+---@field Counter? {value: int} The properties of the Counter. ⚠️ Only valid for the Built-in Counter object.
+---The properties of the revealer on the object should it reveal the Fog of War, and if so, the properties of the revealer.
+---@field FogOfWarRevealer FogOfWarRevealParameters
+---The Custom Mesh on this object. ⚠️ Only valid for Custom Model objects!
+---@field CustomMesh? SpawnObjectData.Data.CustomMesh
+---@field tags? string[] The tags on the object.
+---# 🚨 Unknown. 
+---@field MaterialIndex int
+---# 🚨 Unknown.  Related to the custom mesh
+---@field MeshIndex int
+---# 🚨 Unknown.  Included on empty bags and infinite bags
+---@field Number? int 
+
+---The parameters used by the `spawnObjectData()` function.
+---
+--->### 🔥 Tip
+--->You can derive your `data` table from another object by calling
+---[getData()](https://api.tabletopsimulator.com/object/#getdata) on it, and manipulating the resultant table as you see
+---fit.
+---@see spawnObjectData
+---@see Object.getData
+---@class SpawnObjectData.Parameters
+---Table with properties describing the object that will be spawned. Required content depends on the type of the object being spawned.
+---@field data SpawnObjectData.Data
+---Position where the object will be spawned. When specified, overrides the `Transform` position in `data`.
+---@field position? Vector
+---@field rotation? Vector Rotation of the spawned object. When specified, overrides the `Transform` rotation in `data`.
+---Scale of the spawned object. When specified, overrides the `Transform` scale in `data`. *Optional, defaults to `nil`*
+---@field scale? Vector
+---Callback function to be called after the object has finished spawning. *Optional, defaults to `nil`*
+---@field callback_function? fun(obj: Object):any
+
+---The parameters used by the `spawnObjectData()` function.
+---
+--->### 🔥 Tip
+--->You can derive your `data` table from another object by calling
+---[getData()](https://api.tabletopsimulator.com/object/#getdata) on it, and manipulating the resultant table as you see
+---fit.
+---@see spawnObjectJSON
+---@see Object.getJSON
+---@class SpawnObjectJSON.Parameters
+---JSON string describing the object that will be spawned
+---@field data string
+---Position where the object will be spawned. When specified, overrides the `Transform` position in `json`.
+---@field position? Vector
+---@field rotation? Vector Rotation of the spawned object. When specified, overrides the `Transform` rotation in data.
+---Scale of the spawned object. When specified, overrides the `Transform` scale in data. *Optional, defaults to `nil`*
+---@field scale? Vector
+---Callback function to be called after the object has finished spawning. *Optional, defaults to `nil`*
+---@field callback_function? fun(obj: Object):any

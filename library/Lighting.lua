@@ -112,3 +112,5 @@ function Lighting.setAmbientSkyColor(tint) end
 ---[Open Documentation](https://api.tabletopsimulator.com/lighting/#setdirectionallightcolor)
 ---
 function Lighting.setLightColor(tint) end
+
+return Lighting

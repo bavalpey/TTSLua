@@ -42,3 +42,5 @@ function Backgrounds.setBackground(name) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/backgrounds/#setcustombackground)
 function Backgrounds.setCustomBackground(url) end
+
+return Backgrounds

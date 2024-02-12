@@ -5,9 +5,9 @@
 ---
 ---This information helps players find your game/mod within Tabletop Simulator's server list and via Steam Workshop's search/filter capabilities.
 ---#### Example Usage
---->```
---->Info.name = "My Game"
---->```
+---```
+---Info.name = "My Game"
+---```
 ---
 ---***
 ---

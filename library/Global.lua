@@ -392,3 +392,5 @@ function Global.setVectorLines(lines) end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#setsnappoints)
 ---
 function Object.setSnapPoints(snap_points) end
+
+return Global

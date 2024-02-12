@@ -215,7 +215,6 @@ function Object.getTransformForward() end
 ---
 function Object.getTransformRight() end
 
-
 ---Gets the up direction of this Object.
 ---@return Vector # A Vector of the up direction of this Object, relative to how the object is facing.
 ---### Example Usage
@@ -239,7 +238,6 @@ function Object.getTransformRight() end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#gettransformup)
 ---
 function Object.getTransformUp() end
-
 
 ---Returns a Table of Vector information describing the size of the merged renderers on an object in Global terms, as
 ---if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html)
@@ -278,7 +276,6 @@ function Object.getVisualBoundsNormalized() end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#issmoothmoving)
 ---
 function Object.isSmoothMoving() end
-
 
 ---Returns a Vector after converting a world vector to a local Vector. A world Vector is a positional Vector using the
 ---world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given
@@ -391,7 +388,6 @@ function Object.setAngularVelocity(vector) end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#setpositionsmooth)
 ---
 function Object.setPositionSmooth(position, collide, fast) end
-
 
 ---Instantly rotates this Object to the given Vector.
 ---
@@ -607,10 +603,10 @@ function Object.clearInputs() end
 --->     font_color     = {1, 1, 1},
 --->     tooltip        = "This text appears on mouseover.",
 ---> }
----> 
+--->
 ---> self.createButton(params)
 ---> end
----> 
+--->
 ---> function click_func(obj, color, alt_click)
 ---> print(obj)
 ---> print(color)
@@ -708,7 +704,6 @@ function Object.createInput(parameters) end
 ---@see Object.createButton
 ---@see Button.Parameters.Edit
 function Object.editButton(parameters) end
-
 
 ---
 ---Modify an existing input. The only parameter that is required is the index. The rest are optional, and not using
@@ -1321,7 +1316,7 @@ function Object.setRotationValue(rotation_value) end
 
 ---@class setRotationValuesParameters
 ---Value associated with the rotation.<ul><ul><li>If <code>value</code> is a string starting with "#", then it will not
----be displayed in the Object's tooltip. 
+---be displayed in the Object's tooltip.
 ---@field value int|string|float
 ---@field rotation Vector Rotation of the Object that corresponds with the provided `value`.
 
@@ -1467,7 +1462,6 @@ function Object.clearContextMenu() end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#clone)
 ---
 function Object.clone(parameters) end
-
 
 ---Cuts (splits) a deck down to a given card. In other words, it counts down from the top of the deck and makes a new
 ---deck of that size and puts the remaining cards in the other pile.
@@ -1650,7 +1644,6 @@ function Object.highlightOn(color, duration) end
 ---
 function Object.jointTo(object, parameters) end
 
-
 ---Places an object into a container (chip stacks/bags/decks). If neither Object is a container, but they are able to be
 ---combined (like with 2 cards), then they form a deck/stack.
 ---@param put_object Object
@@ -1728,8 +1721,6 @@ function Object.removeAttachments() end
 ---
 function Object.removeFromPlayerSelection(player_color) end
 
-
-
 ---Resets this Object. Resetting a Deck brings all the Cards back into it. Resetting a Bag clears its contents (works
 ---for both Loot and Infinite Bags).
 ---@return bool
@@ -1748,7 +1739,6 @@ function Object.reset() end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#roll)
 ---
 function Object.roll() end
-
 
 ---Shuffles/shakes up contents of a deck or bag.
 ---@return bool
@@ -1802,7 +1792,6 @@ function Object.split(piles) end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#spread)
 ---
 function Object.spread(distance) end
-
 
 ---@class (exact) TakeObjectParameters
 ---A Vector of the positoon to place the object. *Optional, defaults to container's position + 2 on the x axis.
@@ -1995,7 +1984,7 @@ function Object.setInvisibleTo(players) end
 
 ---Attaches an invisible hider to the object (or removes it if enabled is false).
 ---
----A more advanced version of `setHiddenFrom(...)`, this function is also used to hide objects as if they were in a hand zone. 
+---A more advanced version of `setHiddenFrom(...)`, this function is also used to hide objects as if they were in a hand zone.
 ---It allows you to identify multiple sources of "hiding" by an ID and toggle the effect on/off easily.
 ---
 ---This function is slightly more complicated to use for basic hiding, but allows for much easier hiding in complex situations.
@@ -2091,7 +2080,6 @@ function Object.attachInvisibleHider(id, hidden, players) end
 --
 function Object.addDecal(parameters) end
 
-
 ---Calls a Lua function owned by this Object and passes an optional table as parameters to the function.
 ---
 ---@param function_name string Function name you want to activate.
@@ -2158,7 +2146,6 @@ function Object.call(function_name, parameters) end
 ---```
 function Object.getDecals() end
 
-
 ---Get the Lua script on this object as a string.
 ---
 ---@return string
@@ -2210,7 +2197,6 @@ function Object.getVar(var_name) end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#getvectorlines)
 ---
 function Object.getVectorLines() end
-
 
 ---Sets which decals are on this Object. This removes other decals already present, and can remove all decals as well.
 ---@param decals Decal.Parameters[] A table of Decal Properties to set on the Object.

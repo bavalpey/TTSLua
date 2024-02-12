@@ -1,4 +1,5 @@
 ---@meta AssetBundle
+
 ---The AssetBundle behavior is present on Objects that were created from a custom [AssetBundle](https://kb.tabletopsimulator.com/custom-content/custom-assetbundle/).
 ---@class AssetBundle
 ---@field getLoopingEffectIndex fun(): int Index of the currently looping effect. Indexes starts at 0.

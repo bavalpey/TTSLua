@@ -108,3 +108,5 @@ function Physics.getGravity() end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/physics/#setgravity)
 function Physics.setGravity(gravity) end
+
+return Physics

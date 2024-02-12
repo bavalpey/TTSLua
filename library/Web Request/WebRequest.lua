@@ -145,3 +145,5 @@ function WebRequest.post(url, form, callback_function) end
 ---[Open Documentation](https://api.tabletopsimulator.com/webrequest/#put)
 ---
 function WebRequest.put(url, data, callback_function) end
+
+return WebRequest

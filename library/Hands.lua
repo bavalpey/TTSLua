@@ -49,3 +49,5 @@ Hands = {}
 ---[Open Documentation](https://api.tabletopsimulator.com/player/#gethandzones)
 ---
 function Hands.getHands() end
+
+return Hands

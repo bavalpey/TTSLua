@@ -54,3 +54,5 @@ JSON.encode = function(variable) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/json/#encode_pretty)
 JSON.encode_pretty = function(variable) end
+
+return JSON

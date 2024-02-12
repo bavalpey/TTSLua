@@ -152,7 +152,6 @@ function Color.fromHex(hexStr) end
 ---
 function Color:setAt(key, num) end
 
-
 ---Update all components of the vector and return self.
 ---
 ---Providing a nil value makes it ignore that argument.
@@ -332,7 +331,6 @@ function Color:dump(prefix) end
 ---
 ---See: [Color.Blue](https://api.tabletopsimulator.com/color/#colorblue)
 function Color.add(name, yourColor) end
-
 
 ---Return a string description of a color.
 ---@return string

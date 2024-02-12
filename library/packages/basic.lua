@@ -1,5 +1,7 @@
----@diagnostic disable: duplicate-doc-alias
 ---@meta _
+
+-- We are overwriting the base functions provided by tts, so disable the duplicate doc diagnostics.
+---@diagnostic disable: duplicate-doc-alias, duplicate-doc-field
 
 ---
 ---Raises an error if the value of its argument v is false (i.e., `nil` or `false`); otherwise, returns all its arguments. In case of error, `message` is the error object; when absent, it defaults to `"assertion failed!"`

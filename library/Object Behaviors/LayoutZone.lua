@@ -64,14 +64,37 @@
 ---The LayoutZone behavior is present on [Layout Zones](https://kb.tabletopsimulator.com/game-tools/zone-tools/#layout-zone).
 ---#### Example
 ---Log a layout zone's options.
---->```
---->log(zone.LayoutZone.getOptions())
---->```
+---```
+---log(zone.LayoutZone.getOptions())
+---```
 ---
 ---***
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/behavior/layoutzone/)
 ---@class LayoutZone
----@field getOptions fun():LayoutZoneOptions Returns the layout zones [options](https://api.tabletopsimulator.com/behavior/layoutzone/#options).
----@field layout fun():bool Causes the layout zone to (re)layout.
----@field setOptions fun(options: LayoutZoneOptionsSetter): bool Sets the layout zone's [options](https://api.tabletopsimulator.com/behavior/layoutzone/#options). If an option is not included in the table, then the zone's value for that option will remain unchanged.
+local LayoutZone = {}
+
+---Returns the layout zone's [options](https://api.tabletopsimulator.com/behavior/layoutzone/#options).
+---@return LayoutZoneOptions
+---
+---***
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/layoutzone/#getoptions)
+---
+function LayoutZone.getOptions() end
+
+---Causes the layout zone to (re)layout.
+---@return bool
+---
+---***
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/layoutzone/#layout)
+---
+function LayoutZone.layout() end
+
+---Sets the layout zone's [options](https://api.tabletopsimulator.com/behavior/layoutzone/#options). If an option is not included in the table, then the zone's value for that option will remain unchanged.
+---@param options LayoutZoneOptionsSetter
+---@return bool
+---
+---***
+---[Open Documentation](https://api.tabletopsimulator.com/behavior/layoutzone/#setoptions)
+---
+function LayoutZone.setOptions(options) end

@@ -207,7 +207,7 @@ function string.unicode(s, i, j) end
 ---
 ---[Open Documentation](https://www.moonsharp.org/additions.html#new-functions-in-the-string-module)
 ---
-function string.contains(str, str2) end
+function string.contains(str1, str2) end
 
 ---Returns `true` if str2 is contained at the very start of str1.
 ---@param str1 string

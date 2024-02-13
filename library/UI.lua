@@ -1,0 +1,390 @@
+---@meta UI
+
+---# UI
+
+
+---The parameter table for [Custom Assets](https://api.tabletopsimulator.com/ui/#setcustomassets-custom-assets)
+---@class UI.CustomAsset
+---@field name string The name used to refer to the asset.
+---@field url string The URL the asset is loaded from *✏️ Note: currently, only images are supported*
+
+
+---@param player? Player A direct player reference to the person that triggered the input
+---@param value? any
+---@param id? string The id of the UI element that triggered the input. This is only passed if the element was given an ID attribute.
+local function inputCallback(player, value, id) end
+
+---UI, a static global class and an Object class. It is the method to interact with custom UI elements. It allows you to
+---read/write attributes of elements defined in the XML of the UI. It also allows you to receive information from
+---various inputs (like buttons) on-screen and on objects.
+---
+--->### ⚠️Attention
+--->This class allows for the **manipulation** of UI **at runtime**. It does **NOT** modify or fetch the **original
+--->XML** in the editor, but rather what is displayed as it continues to run during a game. Just like with Lua, you can
+--->only get/set dynamic values during runtime. You can use
+--->[onSave](https://api.tabletopsimulator.com/events/#onsave) and
+--->[onLoad](https://api.tabletopsimulator.com/events/#onload) to record any data you want to persist through
+--->save/load/undo.
+---
+---For more information on how to build UI elements within XML, view the [UI API](https://api.tabletopsimulator.com/ui/introUI/).
+---
+---## Global and Object
+---UI can either be placed on the screen by using the **Global UI** or placed on an Object using **Object UI**.
+---Depending on which you are using, these commands are used differently.
+---
+---Example of calling a function targeted at the Global UI
+---```
+---Global.UI.setAttribute("testElement", "text", "Hello World")
+---```
+---Example of calling a function targeted at an Object UI
+---```
+---getObjects()[1].UI.getAttributes(id)
+---```
+---
+---## Inputs
+---[Input Elements](https://api.tabletopsimulator.com/ui/inputelements/) are able to trigger a function. By default,
+---Global UI will trigger a function in Global and Object UI will trigger a function in the Object's script. To change
+---the target for an input,
+---[view more details here](https://api.tabletopsimulator.com/ui/inputelements/#targeting-triggers).
+---
+---When creating the input element in XML, you will select the name of the function it activates. Regardless of its
+---name, it will always pass parameters.
+--->### ✏️ Note
+--->Lua functions can always be passed more parameters than are
+---defined in the function signature. Any extra parameters are ignored.
+---
+---### Callback function signature for an input element
+---+ `Player` player — A direct player reference to the person that triggered the input.
+---+ `any` value — The value sent by the input. Generally a numeric value or string. **🔥 This is not used by buttons!**
+---+ `string` id — The id of the UI element that triggered the input. This is only passed if the element was given an ID
+---attribute in the XML.
+---### Example Callback Function
+---```
+---function onButtonClick(player, value, id)
+---    print(player.steam_name)
+---    print(id)
+---end
+---```
+---@class UI
+---@field loading bool Indicates whether (the server) has finished loading all UI custom assets.
+UI = {}
+
+---Obtain the value of a specified attribute of a UI element.
+---@param id string The Id that was assigned, as an attribute, to the desired XML UI element.
+---@param attribute string The name of the attribute to get the value of
+---@return any # The value of the attribute.
+---
+---### Example Usage
+---```
+---self.UI.getAttribute("testElement", "fontSize")
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#getattribute)
+---@nodiscard
+function UI.getAttribute(id, attribute) end
+
+---Return all attributes and their values for a given UI element.
+---
+--->### ✏️ Note
+--->Only returns the attributes (and values) for elements that have been explicitly set (i.e. not the default values).
+---@param id string The Id that was assigned, as an attribute, to the desired XML UI element.
+---@return table<string, any> # A table of all the attributes and their values.
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#getattributes)
+---@nodiscard
+function UI.getAttributes(id) end
+
+---Return a table/array of [custom assets](https://api.tabletopsimulator.com/ui/#setcustomassets-custom-assets).
+---@return UI.CustomAsset[] # A table of all the custom assets.
+---
+---***
+---
+---### Example Usage
+---```
+---log(UI.getCustomAssets())
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#getcustomassets)
+---@nodiscard
+function UI.getCustomAssets() end
+
+---Obtain the value between element tags
+---@param id string The Id that was assigned, as an attribute, to the desired XML UI element.
+---@return string # The value between the tags of the element.
+---
+---***
+---
+---### Example Usage
+---```
+---string = UI.getValue("testElement")
+---print(string)
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#getvalue)
+---@nodiscard
+function UI.getValue(id) end
+
+---Return the contents of the UI.
+---@return table<string, any>
+---
+---### Example Usage
+---If this was the xml
+---```xml
+---<HorizontalLayout height="200" width="1000" color="rgba(0,0,0,0.7)">
+---    <Text fontSize="100" color="red">Example</Text>
+---    <Text text="Message" fontSize="100" color="blue" />
+---</HorizontalLayout>
+---```
+---This would be the returned table
+---```
+---{
+---    {
+---        tag="HorizontalLayout",
+---        attributes={
+---            height=200,
+---            width=1000,
+---            color="rgba(0,0,0,0.7)",
+---        },
+---        children={
+---            {
+---                tag="Text",
+---                attributes={
+---                    fontSize=100,
+---                    color="red",
+---                },
+---                value="Example",
+---            },
+---            {
+---                tag="Text",
+---                attributes={
+---                    text="Message",
+---                    fontSize=100,
+---                    color="blue",
+---                },
+---            },
+---        }
+---    }
+---}
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#getxmltable)
+---@nodiscard
+function UI.getXmlTable() end
+
+---Hide the given UI element. Unlike when the `active` attribute is modified, this will trigger animations.
+---@param id string The Id that was assigned, as an attribute, to the desired XML UI element.
+---@return bool
+---
+---### Example Usage
+---```
+---self.UI.hide("testElement")
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#hide)
+---
+function UI.hide(id) end
+
+---Set the value of a specified attribute of a UI element.
+--->### 🔥 Important
+--->This will override the run-time value from the XML UI for all players, forcing them to see the same value.
+---@param id string The Id that was assigned, as an attribute, to the desired XML UI element.
+---@param attribute string The name of the attribute to set the value of
+---@param value any The value to set the attribute to
+---@return bool
+---
+---### Example Usage
+---```
+---self.UI.setAttribute("testElement", "fontSize", 200)
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#setattribute)
+---
+function UI.setAttribute(id, attribute, value) end
+
+---Update the values attributes for the given UI element.
+--->### ✏️ Note
+--->Only attributes specified in the table will be updated, all other attributes will remain unchanged.
+--->The element will retain all attribute values that are not included as keys in the table.
+---
+--->### 🔥 Important
+--->This will override the run-time value from the XML UI for all players, forcing them to see the same value.
+---
+---@param id string The Id that was assigned, as an attribute, to the desired XML UI element.
+---@param data table<string, any> The table representing attributes and their values.
+---@return bool
+---
+---### Example Usage
+---```
+---attributeTable = {
+---    fontSize = 300,
+---    color = "#000000"
+---}
+---self.UI.setAttributes("exampleText", attributeTable)
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#setattributes)
+---
+function UI.setAttributes(id, data) end
+
+---Replaces all classes on the UI element.
+---@param id string The Id that was assigned, as an attribute, to the desired XML UI element.
+---@param classes string A space-separated list of classes to apply to the element.
+---@return bool
+---
+---### Example Usage
+---Replace all classes on the element with ID `someElementId` with two classes: `important` and `large`.
+---```
+---self.UI.setClass("someElementId", "important large")
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#setclass)
+---
+function UI.setClass(id, classes) end
+
+---Set/replace the custom assets that your UI can make use of. Provigind an empty table will remove all existing UI
+---assets.
+--->### ⚠️ Warning
+--->This function will overwrite/replace any currently existing assets in Custom UI Assets, not add to them.
+--->Consider first using [UI.getCustomAssets](https://api.tabletopsimulator.com/ui/#getcustomassets) to get the current
+--->assets as a table, then append to it.
+---@param assets UI.CustomAsset[] A table of [custom assets](https://api.tabletopsimulator.com/ui/#setcustomassets-custom-assets).
+---@return bool
+---
+---***
+---
+---### Example Usage
+---Add two images that can be used within the XML UI.
+---```
+---UI.setCustomAssets({
+---    {
+---        name = "Image1",
+---        url = "http://placehold.it/120x120&text=image1"
+---    },
+---    {
+---        name = "Image2",
+---        url = "http://placehold.it/120x120&text=image2"
+---    },
+---})
+---```
+---
+---***
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#setcustomassets)
+---
+---***
+---@see UI.getCustomAssets
+function UI.setCustomAssets(assets) end
+
+---Set/replace the UI with the contents of the provided XML.
+---
+--->### ⚠️ Warning
+--->UI changes do not take effect immediately. Any attempt to query the contents of the XML will return stale results
+--->until [loading](https://api.tabletopsimulator.com/ui/#loading) is `false`.
+---
+---@param xml string A string containing XML representing the desired UI element.
+---@param assets? UI.CustomAsset[] # A table of [custom assets](https://api.tabletopsimulator.com/ui/#setcustomassets-custom-assets) *Optional. When ommitted, existing custom assets are not modified*
+---@return bool
+---
+---***
+---### Example Usage
+---```
+---UI.setXml("<Text>Test</Text>")
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#setxml)
+---
+---***
+---@see UI.loading
+function UI.setXml(xml, assets) end
+
+---@class UI.XMLTable.Parameters
+---@field tag string The element type.
+---@field attributes? table<string, any> A table containing attribute names and values.
+---@field value string Text that appears between opening and closing tag on the element. Not to be confused with `children`
+---@field children? UI.XMLTable.Parameters[] A table of child elements.
+
+---Set/replace the UI with the contents of the provided UI table
+--->### ⚠️ Warning
+--->UI changes do not take effect immediately. Any attempt to query the contents of the XML will return stale results
+--->until [loading](https://api.tabletopsimulator.com/ui/#loading) is `false`.
+---@param data UI.XMLTable.Parameters The table representing the UI.
+---@param assets? UI.CustomAsset[] # A table of [custom assets](https://api.tabletopsimulator.com/ui/#setcustomassets-custom-assets) *Optional. When ommitted, existing custom assets are not modified*
+---@return bool
+---
+---***
+---### Example Usage
+---Display two text labels within a horizontal layout.
+---```
+---UI.setXmlTable({
+---    {
+---        tag="HorizontalLayout",
+---        attributes={
+---            height=200,
+---            width=1000,
+---            color="rgba(0,0,0,0.7)",
+---        },
+---        children={
+---            {
+---                tag="Text",
+---                attributes={
+---                    fontSize=100,
+---                    color="red",
+---                },
+---                value="Example",
+---            },
+---            {
+---                tag="Text",
+---                attributes={
+---                    text="Message",
+---                    fontSize=100,
+---                    color="blue",
+---                },
+---            },
+---        }
+---    }
+---})
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#setxmltable)
+---
+---***
+---@see UI.loading
+function UI.setXmlTable(data, assets) end
+
+---Show the given UI element. Unlike when the `active` attribute is modified, this will trigger animations.
+---@param id string The Id that was assigned, as an attribute, to the desired XML UI element.
+---@return bool
+---
+---### Example Usage
+---```
+---self.UI.show("testElement")
+---```
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/ui/#show)
+---
+function UI.show(id) end
+
+return UI

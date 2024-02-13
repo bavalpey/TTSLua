@@ -18,7 +18,7 @@
 ---@field script_state string 
 ---@field name string Always Scripting Manager
 ---@field spawning bool
----@private _registeredForCollisions bool
+---@field UI UI The global UI class that appears on each player's screen.
 Global = {
     guid = "-1",
     name = "Scripting Manager",

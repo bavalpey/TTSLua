@@ -62,6 +62,7 @@
 ---@field Browser? Browser **Available On** "Tablet" Objects
 ---@field Clock? Clock **Available On** "Digital Clock" Objects
 ---@field Counter? Counter **Available On** "Counter" Objects
+---@field UI UI # The XML UI class for the object. 
 local Object = {
     ---*[`Deprecated`]()Use [type](https://api.tabletopsimulator.com/object/#type)*
     ---

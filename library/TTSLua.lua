@@ -16,7 +16,7 @@ self = ...
 ---@field is_unity boolean `true` if running inside Unity.
 ---@field ismono boolean `true` if running on Mono.
 ---@field is_clr4 boolean `true` if running on CLR4.
----@field is_pcl boolean `true` if running os a portable class library.
+---@field is_pcl boolean `true` if running on a portable class library.
 ---@field banner string A banner similar to the one in the REPL interpreter.
 
 _MOONSHARP = {

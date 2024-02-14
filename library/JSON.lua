@@ -1,10 +1,8 @@
 ---@meta JSON
 
-
 ---# JSON
 
 ---@alias JSONValue string | number | table
-
 
 ---The static global JSON class provides the ability to encode/decode data into JSON strings. This is largely used by the onSave() event function, but has other potential applications as well. The JSON class can be used on any String, Int, Float or Table. You call these functions like this: JSON.encode(...).
 ---
@@ -12,8 +10,8 @@
 --->This class **does not** work with Object references. Use the Object's GUID instead.
 ---@class JSON
 JSON = {
-    AUTHOR_NOTE = "-[ JSON.lua package by Jeffrey Friedl (http://regex.info/blog/lua/json) version 20141223.14 ]-",
-    VERSION = 20141223.14,
+	AUTHOR_NOTE = "-[ JSON.lua package by Jeffrey Friedl (http://regex.info/blog/lua/json) version 20141223.14 ]-",
+	VERSION = 20141223.14,
 }
 
 ---Decodes a valid JSON string into a Lua string, number, or table.

@@ -2,12 +2,10 @@
 
 ---# UI
 
-
 ---The parameter table for [Custom Assets](https://api.tabletopsimulator.com/ui/#setcustomassets-custom-assets)
 ---@class UI.CustomAsset
 ---@field name string The name used to refer to the asset.
 ---@field url string The URL the asset is loaded from *✏️ Note: currently, only images are supported*
-
 
 ---@param player? Player A direct player reference to the person that triggered the input
 ---@param value? any

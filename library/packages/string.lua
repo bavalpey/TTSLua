@@ -134,7 +134,6 @@ function string.lower(s) end
 ---@nodiscard
 function string.match(s, pattern, init) end
 
-
 ---
 ---Returns a string that is the concatenation of `n` copies of the string `s` separated by the string `sep`.
 ---
@@ -177,8 +176,6 @@ function string.sub(s, i, j) end
 ---@return string
 ---@nodiscard
 function string.upper(s) end
-
-
 
 ---# Added by Moonsharp
 
@@ -230,8 +227,5 @@ function string.startsWith(str1, str2) end
 ---[Open Documentation](https://www.moonsharp.org/additions.html#new-functions-in-the-string-module)
 ---
 function string.endsWith(str1, str2) end
-
-
-
 
 return string

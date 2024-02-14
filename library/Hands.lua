@@ -16,7 +16,6 @@
 ---@field right Vector Right direction of the hand zone.
 ---@field up Vector Up direction of the hand zone.
 
-
 ---@alias HandHidingEnum
 ---| 1 # Default. The contents of a player's hands are only visible to the owner.
 ---| 2 # Reverse. The contents of a player's hands are visible to all players.

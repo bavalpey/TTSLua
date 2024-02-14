@@ -2,10 +2,8 @@
 
 ---THINGS IN THIS MODULE EXIST IN TTS BUT ARE NOT OFFICIALLY DOCUMENTED (as of version 13.2.2 hotfix 1)
 
-
 pack = table.pack
 unpack = table.unpack
-
 
 ---https://www.moonsharp.org/additions.html#the-json-module
 ---@class jsonlib
@@ -27,7 +25,6 @@ function json.parse(jsonString) end
 ---[Open Documentation](https://www.moonsharp.org/additions.html#the-json-module)
 function json.serialize(table) end
 
-
 ---Returns true if the value specified is a null read from a json
 ---@param val any
 ---@return bool
@@ -39,7 +36,6 @@ function json.isnull(val) end
 
 ---@return userdata
 function json.null() end
-
 
 ---This class describes the structure of the table returned by `inspect`.
 ---@class InspectResultTable
@@ -55,15 +51,12 @@ function json.null() end
 --->This function is not officially Documented on Tabletop Simulator's API Documentation.
 function inspect(var) end
 
-
 ---Add a console command.
----     
+---
 ---@param name string
 ---@param callback fun(parameters: string[], ...:any) # The function to be called when the console command is used. `parameters` is a table whose first element is the Player Color string of the player who used the command. The rest of the elements are the arguments passed to the command line.
 ---@param arg3 bool # This is an undocumented function, and the purpose or meaning of the third argument is currently unknown.
 function addConsoleCommand(name, callback, arg3) end
-
-
 
 ---Undocumented function that gets the player's hand position and rotation.
 ---@param playerColor? string The player color to get the hand position of. If `nil`, or if there is not a hand for the player color provided, `nil` is returned.
@@ -80,7 +73,6 @@ function getPointerPosition(playerColor) end
 ---@param playerColor string The player color to get the pointer rotation of.
 ---@return nil|Vector # The rotation of the specified player's pointer.
 function getPointerRotation(playerColor) end
-
 
 ---Undocumented function that gets the player instance for the specified color.
 ---@param playerColor string The player color to get the player instance of.
@@ -151,8 +143,6 @@ function clearVectorPaint() end
 ---@return bool
 ---@deprecated
 function clearVectorPaint() end
-
-
 
 ---Undocumented function that appears to be equivalent to `Notes.getNotebookTabs`.
 ---@return NotebookTab.Properties

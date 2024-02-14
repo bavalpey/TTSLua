@@ -1,6 +1,5 @@
 ---@meta WebRequest.Instance
 
-
 ---Web request instances reprsent a singular in-progress, completed or failed web request. They are created via the
 ---[Web Request Manager]. https://api.tabletopsimulator.com/webrequest/manager/
 ---@see WebRequest

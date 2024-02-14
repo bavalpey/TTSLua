@@ -10,10 +10,10 @@
 ---@field repeat_track bool If the current audio clip should be repeated.
 ---@field shuffle bool If the playlist should play shuffled.
 MusicPlayer = {
-    ---*Use [playlist_index](#playlist_index) instead.*
-    ---@type int
-    ---@deprecated
-    playlistIndex = ...,
+	---*Use [playlist_index](#playlist_index) instead.*
+	---@type int
+	---@deprecated
+	playlistIndex = ...,
 }
 
 ---Parameters for the music player's playlist used by `MusicPlayer.setPlaylist` and `MusicPlayer.setCurrentAudioclip`.

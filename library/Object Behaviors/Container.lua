@@ -24,8 +24,6 @@ local Container = {}
 ---
 function Container.search(player, max_cards) end
 
-
-
 ---The data returned when calling `getObjects()` on a Container or deck.
 ---@class ObjectInContainerData
 ---@field description string [Description](https://api.tabletopsimulator.com/object/#getdescription) of the contained object.
@@ -64,10 +62,10 @@ function Container.search(player, max_cards) end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#getobjects-containers)
 ---
 local ObjectInContainerData = {
-    ---*[``deprecated``](https://api.tabletopsimulator.com/intro/#deprecated) Use `name`.*
-    ---
-    ---[Name](https://api.tabletopsimulator.com/object/#getname) of the item.
-    ---@deprecated
-    ---@type string
-    nickname = ...,
+	---*[``deprecated``](https://api.tabletopsimulator.com/intro/#deprecated) Use `name`.*
+	---
+	---[Name](https://api.tabletopsimulator.com/object/#getname) of the item.
+	---@deprecated
+	---@type string
+	nickname = ...,
 }

@@ -4,7 +4,7 @@
 ---> ### Danger
 ---> Component APIs are an advanced feature. An **understanding of how Unity works is required** to utilize them.
 ---@class Component
----@field game_object GameObject The GameObject the Component composes.	
+---@field game_object GameObject The GameObject the Component composes.
 ---@field name string The name of the Component.
 local Component = {}
 

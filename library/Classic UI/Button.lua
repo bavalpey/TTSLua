@@ -1,6 +1,5 @@
 ---@meta Button
 
-
 ---Tabletop Simulator's [Button](https://api.tabletopsimulator.com/object/#createbutton) element
 ---from the [Classic UI](https://api.tabletopsimulator.com/object/#classic-ui)
 ---

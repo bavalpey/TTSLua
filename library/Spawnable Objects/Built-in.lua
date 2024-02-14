@@ -12,7 +12,7 @@
 
 ---@alias SpawnObjectType
 ---| '"BlockRectangle"' # `Block` — A blue rectangular prism.
----| '"BlockSquare"' # `Block` — A red cube. 
+---| '"BlockSquare"' # `Block` — A red cube.
 ---| '"BlockTriangle"' # `Block` — A green triangular prism.
 ---| '"backgammon_board"' # `Board` — The fold-open board of Backgammon.
 ---| '"CardBot_Board"' # `Board` — The main board and 4 player boards of CardBots, Build & Destroy.

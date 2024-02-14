@@ -112,7 +112,7 @@ function MusicPlayer.setCurrentAudioclip(parameters) end
 ---### Example Usage
 ---Set the current playlist to include three pieces of music.
 ---```
----MusicPlayer.setCurrentAudioclip({
+---MusicPlayer.setPlaylist({
 ---    {
 ---        url = "https://domain.example/path/to/clip.mp3",
 ---        title = "Example"
@@ -131,7 +131,7 @@ function MusicPlayer.setCurrentAudioclip(parameters) end
 ---***
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/musicplayer/#setplaylist)
-function MusicPlayer.setPlaylist() end
+function MusicPlayer.setPlaylist(playlist) end
 
 ---Skips to the beginning of the audioclip or if the play time is less than 3 seconds to the previous audioclip in
 ---playlist if possible. Returns true if skip was successful, otherwise returns false.

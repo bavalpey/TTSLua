@@ -1,6 +1,5 @@
 ---@meta FogOfWar
 
-
 ---The parameters to `setFogOfWarReveal` are a Table with these keys.
 ---
 ---All keys are optional; ommitting one will keep its current setting.

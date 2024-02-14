@@ -3,7 +3,6 @@
 ---# Decals are an abstract class used by the addDecal functions.
 ---@class Decal
 
-
 ---The parameters used by the `Global.addDecal` and `Object.addDecal` functions.
 ---
 ---***

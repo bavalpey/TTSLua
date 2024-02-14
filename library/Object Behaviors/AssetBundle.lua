@@ -36,7 +36,6 @@ function AssetBundle.getLoopingEffectIndex() end
 ---
 function AssetBundle.getLoopingEffects() end
 
-
 ---Returns a Table with the keys "index" and "name" for each trigger effect.
 ---@return {index: int, name: int}[]
 ---

@@ -32,7 +32,6 @@ function Clock.getValue() end
 ---
 function pauseStart() end
 
-
 ---Set the timer to display a number of seconds. This function acts the same as
 ---[Object's setValue()](https://api.tabletopsimulator.com/object/#setvalue). If the Clock is not in timer mode, it will
 ---be switched. If it is in timer mode, it will be paused and the remaining time will be changed.
@@ -53,7 +52,6 @@ function pauseStart() end
 ---[Open Documentation](https://api.tabletopsimulator.com/behavior/clock/#setvalue)
 ---
 function Clock.setValue(seconds) end
-
 
 ---Switch the clock to display current time. It will clear any stopwatch or timer.
 ---@return bool

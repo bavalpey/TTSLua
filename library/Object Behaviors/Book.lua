@@ -51,7 +51,6 @@ function Book.getPage(offsetPageNumbering) end
 ---
 function Book.setHighlight(x1, x2, y1, y2) end
 
-
 ---Sets the current page of the PDF. Returns true if the page was succesfully set, false if the page number was invalid.
 ---
 ---@param page int The new page number.

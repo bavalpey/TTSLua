@@ -50,7 +50,6 @@ function Player.getColors() end
 ---@nodiscard
 function Player.getPlayers() end
 
-
 ---Returns a table of all spectator (Grey) [Player instances](https://api.tabletopsimulator.com/player/instance/).
 ---@return PlayerInstance[] # A table of all spectators
 ---

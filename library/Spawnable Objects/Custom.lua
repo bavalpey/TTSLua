@@ -33,13 +33,11 @@
 ---| 3 # Cardboard
 ---| 4 # Glass ⚠️ Not officially documented, may not work!
 
-
 ---Properties for the Custom AssetBundle object.
 ---@class CustomObject.Properties.CustomAssetbundle
 ---@field assetbundle string the path/URL for the AssetBundle.
 ---@field type assetBundleType An Int representing the Object's type.
 ---@field material assetBundleMaterial An Int representing the Object's material.
-
 
 ---Parameters for creating/editing a Custom AssetBundle object.
 ---@class CustomObject.Params.CustomAssetbundle
@@ -287,7 +285,6 @@
 ---| CustomObject.Params.CustomModel
 ---| CustomObject.Params.CustomTile
 ---| CustomObject.Params.CustomToken
-
 
 ---@alias CustomObject.PropertiesKind CustomObject.Properties.CustomAssetbundle
 ---| CustomObject.Properties.CustomBoard

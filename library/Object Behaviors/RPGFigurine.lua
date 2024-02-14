@@ -1,6 +1,5 @@
 ---@meta RPGFigurine
 
-
 ---The RPGFigurine behavior is present on Objects that are figurines with built-in animations (i.e. RPG Kit objects).
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/behavior/rpgfigurine/)

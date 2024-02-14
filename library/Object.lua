@@ -46,10 +46,10 @@
 ---@field sticky bool If other Objects on top of this one are also picked up when this Object is.
 ---@field tooltip bool If the tooltip opens when a pointer hovers over the object. Tooltips display name and description.
 ---@field type string **Read Only** This object's type
----@field use_gravity bool If gravity affects this object.	
----@field use_grid bool If snapping to grid is enabled or not.	
----@field use_hands bool If this object can be held in a hand zone.	
----@field use_rotation_value_flip bool Switches the axis the Object rotates around when flipped.	
+---@field use_gravity bool If gravity affects this object.
+---@field use_grid bool If snapping to grid is enabled or not.
+---@field use_hands bool If this object can be held in a hand zone.
+---@field use_rotation_value_flip bool Switches the axis the Object rotates around when flipped.
 ---@field use_snap_points bool If snap points are used or ignored.
 ---A numeric value associated with the object, which when non\-zero, will be displayed when hovering over the object.
 ---
@@ -62,20 +62,20 @@
 ---@field Browser? Browser **Available On** "Tablet" Objects
 ---@field Clock? Clock **Available On** "Digital Clock" Objects
 ---@field Counter? Counter **Available On** "Counter" Objects
----@field UI UI # The XML UI class for the object. 
+---@field UI UI # The XML UI class for the object.
 local Object = {
-    ---*[`Deprecated`]()Use [type](https://api.tabletopsimulator.com/object/#type)*
-    ---
-    ---**Read Only** This object's type.
-    ---@deprecated
-    ---@type string
-    tag = ...,
-    ---*[`Deprecated`]()Use [object tags](https://api.tabletopsimulator.com/object/#tag-functions)*
-    ---
-    ---A [bit field](https://en.wikipedia.org/wiki/Bit_field). When objects with overlapping `value_flags` are selected and hovered over, their [values](https://api.tabletopsimulator.com/object/#value) will be summed together.
-    ---@deprecated
-    ---@type int
-    value_flags = ...,
+	---*[`Deprecated`]()Use [type](https://api.tabletopsimulator.com/object/#type)*
+	---
+	---**Read Only** This object's type.
+	---@deprecated
+	---@type string
+	tag = ...,
+	---*[`Deprecated`]()Use [object tags](https://api.tabletopsimulator.com/object/#tag-functions)*
+	---
+	---A [bit field](https://en.wikipedia.org/wiki/Bit_field). When objects with overlapping `value_flags` are selected and hovered over, their [values](https://api.tabletopsimulator.com/object/#value) will be summed together.
+	---@deprecated
+	---@type int
+	value_flags = ...,
 }
 
 ---Adds force to an object in a directional Vector.
@@ -375,7 +375,6 @@ function Object.setAngularVelocity(vector) end
 
 ---Instantly moves an Object to the given Vector. The Vector is interpreted as
 ---[World Position](https://api.tabletopsimulator.com/types/#position).
-
 
 ---
 ---Smoothly moves this Object from its current position to a given world space position.
@@ -796,7 +795,6 @@ function Object.removeInput(index) end
 ---Custom UI gives you a wide variety of element types, not just buttons and inputs, to place onto an Object. It is an
 ---extension of the UI class, and details on its use can be found on the
 ---[UI page](https://api.tabletopsimulator.com/ui/).
-
 
 ---# Get Function Details
 ---These functions obtain information from an object.
@@ -1230,7 +1228,6 @@ function Object.setCustomObject(parameters) end
 ---
 function Object.setDescription(description) end
 
-
 ---Establish the settings and enable/disable an Object's revealing of
 ---[Fog of War](https://kb.tabletopsimulator.com/game-tools/zone-tools/#fog-of-war-zone).
 ---
@@ -1310,7 +1307,6 @@ function Object.setRotationValue(rotation_value) end
 ---be displayed in the Object's tooltip.
 ---@field value int|string|float
 ---@field rotation Vector Rotation of the Object that corresponds with the provided `value`.
-
 
 ---Sets rotation values of an object. Rotation values are used to give value to different rotations (like dice). It works by
 ---checking all of the rotation values assigned to an object and determining which one of them is closest to pointing up, and
@@ -1871,7 +1867,6 @@ function Object.unregsiterCollisions() end
 ---Component APIs are an advanced feature. **An understanding of how Unity works is required** to utilize them. See the
 ---[Introduction to Components](https://api.tabletopsimulator.com/components/introduction/) for more information.
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#component-functions)
-
 
 ---Returns a child GameObject matching the specified `name`.
 ---@param name string

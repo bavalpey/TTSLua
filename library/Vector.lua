@@ -32,8 +32,7 @@ Vector = {}
 ---@param y float
 ---@param z float
 ---@return Vector
-function Vector.new(x, y, z)
-end
+function Vector.new(x, y, z) end
 ---Returns a vector that is made from the smallest components of two vectors.
 ---@param vec1 Vector First vector.
 ---@param vec2 Vector Second vector.
@@ -48,8 +47,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#vectormin)
 ---
-function Vector.min(vec1, vec2)
-end
+function Vector.min(vec1, vec2) end
 
 ---Returns a vector that is made from the largest components of two vectors.
 ---@param vec1 Vector First vector.
@@ -65,8 +63,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#vectormax)
 ---
-function Vector.max(vec1, vec2)
-end
+function Vector.max(vec1, vec2) end
 
 ---Return a vector pointing from vec1 to vec2.
 ---@param vec1 Vector First vector.
@@ -79,8 +76,7 @@ end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#vectorbetween)
-function Vector.between(vec1, vec2)
-end
+function Vector.between(vec1, vec2) end
 
 ---Update one component of the vector and returning self.
 ---@param key int Index of component (1, 2 or 3 for x, y or z).
@@ -96,8 +92,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#setat)
 ---
-function Vector.setAt(key, num)
-end
+function Vector.setAt(key, num) end
 
 ---Update all components of the vector and returning self.
 ---
@@ -116,8 +111,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#set)
 ---
-function Vector.set(x, y, z)
-end
+function Vector.set(x, y, z) end
 
 ---Returns ``x``, ``y``, ``z`` components as three separate values.
 ---@return float, float, float
@@ -131,8 +125,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#get)
 ---
-function Vector.get()
-end
+function Vector.get() end
 
 ---Returns a separate Vector with identical component values.
 ---@return Vector
@@ -148,8 +141,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#copy)
 ---
-function Vector.copy()
-end
+function Vector.copy() end
 
 ---	Adds components of otherVec to self.
 ---@param otherVec Vector The vector to add.
@@ -169,8 +161,7 @@ end
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#add)
 ---
-function Vector:add(otherVec)
-end
+function Vector:add(otherVec) end
 
 ---Subtracts components of otherVec from self.
 ---@param otherVec Vector The vector to subtracts.
@@ -178,8 +169,7 @@ end
 ---
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#sub)
-function Vector:sub(otherVec)
-end
+function Vector:sub(otherVec) end
 
 ---Multiplies self-components by corresponding components from otherVec.
 ---@param otherVec Vector The vector to scale.
@@ -197,14 +187,12 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#scale)
 ---
-function Vector:scale(otherVec)
-end
+function Vector:scale(otherVec) end
 
 ---Multiplies self-components by a numeric factor.
 ---@param num float The numeric factor.
 ---@return Vector self
-function Vector:scale(num)
-end
+function Vector:scale(num) end
 
 ---If self-magnitude is higher than provided limit, scale self-down to match it and returning self.
 ---@param num float The numeric max magnitude.
@@ -219,8 +207,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#clamp)
 ---
-function Vector:clamp(num)
-end
+function Vector:clamp(num) end
 
 ---Makes this vector have a magnitude of 1 and returning self.
 ---
@@ -239,8 +226,7 @@ end
 ---***
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#normalize)
-function Vector:normalize(otherVec)
-end
+function Vector:normalize(otherVec) end
 
 ---Make self into projection on another vector and return self.
 ---
@@ -259,8 +245,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#project)
 ---
-function Vector:project(otherVec)
-end
+function Vector:project(otherVec) end
 
 ---Projects a vector onto a plane defined by a normal orthogonal to the plane and return self.
 ---
@@ -279,8 +264,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#projectonplane)
 ---
-function Vector:projectOnPlane(otherVec)
-end
+function Vector:projectOnPlane(otherVec) end
 
 --- Make self into reflection on another vector and return self.
 ---
@@ -299,8 +283,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#reflect)
 ---
-function reflect(otherVec)
-end
+function reflect(otherVec) end
 
 --- Multiply self-components by -1.
 ---@return Vector
@@ -312,8 +295,7 @@ end
 ---***
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#inverse)
-function inverse()
-end
+function inverse() end
 
 ---Move self towards another vector, but only up to a provided distance limit and return self.
 ---@param target Vector The position to move towards.
@@ -328,8 +310,7 @@ end
 ---***
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#movetowards)
-function Vector:moveTowards(target, num)
-end
+function Vector:moveTowards(target, num) end
 
 ---Rotate self towards another vector, but only up to a provided angle limit and return self.
 ---
@@ -346,8 +327,7 @@ end
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#rotatetowards)<br>
 ---
 ---@see Vector.moveTowards
-function Vector:rotateTowards(target, maxAngle)
-end
+function Vector:rotateTowards(target, maxAngle) end
 
 ---Same as [rotateTowards()](#Vector.rotateTowards), but only works correctly if target Vector is normalized and return self. Less expensive than rotateTowards().
 ---```
@@ -361,8 +341,7 @@ end
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#rotatetowardsunit)<br>
 ---
 ---@see Vector.rotateTowards
-function Vector:rotateTowardsUnit(target, maxAngle)
-end
+function Vector:rotateTowardsUnit(target, maxAngle) end
 
 ---Rotate a Vector angle degrees over given axis (can be ``'x'``, ``'y'``, ``'z'``) and return self.
 ---```
@@ -375,8 +354,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#rotateover)
 ---
-function Vector:rotateOver(axis, angle)
-end
+function Vector:rotateOver(axis, angle) end
 
 ---Return the dot product of two vectors.
 ---
@@ -397,8 +375,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#dot)
 ---
-function Vector.dot(vec1, vec2)
-end
+function Vector.dot(vec1, vec2) end
 
 ---Returns the length of this vector.
 ---@return float
@@ -409,8 +386,7 @@ end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#magnitude)
-function Vector:magnitude()
-end
+function Vector:magnitude() end
 
 ---Returns the ssquared length of this vector.
 ---@return float
@@ -421,9 +397,7 @@ end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#sqrmagnitude)
-function Vector:sqrMagnitude()
-end
-
+function Vector:sqrMagnitude() end
 
 ---Returns distance between two points.
 ---@param p1 Vector First point.
@@ -438,8 +412,7 @@ end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#distance)
-function Vector.distance(p1, p2)
-end
+function Vector.distance(p1, p2) end
 
 ---Returns squared distance between two points.
 ---@param p1 Vector First point.
@@ -453,8 +426,7 @@ end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#distance)
-function Vector.sqrDistance(p1, p2)
-end
+function Vector.sqrDistance(p1, p2) end
 
 ---Returns true if two vectors are approximately equal. The ``margin`` argument is optional and defaults to tolerating a difference of ``~0.03`` in both vector magnitude.
 ---@param vec1 Vector First vector.
@@ -468,8 +440,7 @@ end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#equals)
-function Vector.equals(vec1, vec2, margin)
-end
+function Vector.equals(vec1, vec2, margin) end
 
 ---Return string describing self, optional string prefix
 ---@param prefix? string
@@ -486,8 +457,7 @@ end
 ---
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#string)
-function Vector:string(prefix)
-end
+function Vector:string(prefix) end
 
 ---Returns the angle in degrees between two vectors.
 ---@param vec1 Vector First vector.
@@ -504,8 +474,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#angle)
 ---
-function Vector.angle(vec1, vec2)
-end
+function Vector.angle(vec1, vec2) end
 
 ---Return a cross-product vector of two vectors.
 ---
@@ -529,8 +498,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#cross)
 ---
-function Vector.cross(vec1, vec2)
-end
+function Vector.cross(vec1, vec2) end
 
 ---Linearly interpolates between two points.
 ---Interpolates between the points a and b by the interpolant t. The parameter t is clamped to the
@@ -553,8 +521,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#lerp)
 ---
-function Vector.lerp(p1, p2, t)
-end
+function Vector.lerp(p1, p2, t) end
 
 ---Return a new vector that is normalized (length 1) version of self.
 ---@return Vector
@@ -568,8 +535,7 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#normalized)
 ---
-function Vector:normalized()
-end
+function Vector:normalized() end
 
 ---Return three normalized vectors perpendicular to each other, first one
 ---being in the same direction as self. If ``binormalPlaner`` is provided, the second vector is guaranteed to be
@@ -587,13 +553,11 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#orthonormalize)
 ---
-function Vector:orthoNormalize(binormalPlanar)
-end
+function Vector:orthoNormalize(binormalPlanar) end
 
 ---Returns an angle (In degrees) of rotation of Vector over all axis (``'x'``, ``'y'``, ``'z'``).
 ---@return float, float, float
-function Vector:heading()
-end
+function Vector:heading() end
 
 ---Returns an angle (In degrees) of rotation of Vector over a given ``axis`` (can be ``'x'``, ``'y'``, ``'z'``).
 ---@param axis "x"|"y"|"z" Can be ``'x'``, ``'y'``, ``'z'``.
@@ -608,7 +572,6 @@ end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#heading)
 ---
-function Vector:heading(axis)
-end
+function Vector:heading(axis) end
 
 return Vector

@@ -75,4 +75,5 @@ function Events.onblindfold(player, blindfolded) end
 --[[
 ---@type fun(player: Player, blindfolded: bool)
 onBlindfold = nil
-]]--
+]]
+--

@@ -15,24 +15,22 @@
 ---@class Global: userdata
 ---@field script userdata
 ---@field script_code string
----@field script_state string 
+---@field script_state string
 ---@field name string Always Scripting Manager
 ---@field spawning bool
 ---@field UI UI The global UI class that appears on each player's screen.
 Global = {
-    guid = "-1",
-    name = "Scripting Manager",
-    ---@type string
-    type = "Untagged",
-    ---@deprecated
-    ---@type string
-    tag = "Untagged",
-    ---⚠️ Always true regardless of whether assets are loading
-    ---@type bool
-    loading_custom = true,
+	guid = "-1",
+	name = "Scripting Manager",
+	---@type string
+	type = "Untagged",
+	---@deprecated
+	---@type string
+	tag = "Untagged",
+	---⚠️ Always true regardless of whether assets are loading
+	---@type bool
+	loading_custom = true,
 }
-
-
 
 ---# Undocumented
 ---These functions are not documented to work on global, but have been tested and shown to work.
@@ -47,9 +45,10 @@ function Global.registerCollisions() end
 ---@return bool
 function Global.unregisterCollisions() end
 
-
 ---@return false
-function Global.reset() return false end
+function Global.reset()
+	return false
+end
 
 ---Always returns `Vector(0, 0, 0)`
 ---@return {x: 0, y: 0, z:0}
@@ -63,7 +62,6 @@ function Global.getPosition() end
 ---@param position Vector
 ---@return Vector
 function Global.positionToLocal(position) end
-
 
 ---Always returns the given vector
 ---@param position Vector
@@ -81,7 +79,6 @@ function Global.getTransformForward() end
 ---Always returns `Vector(0, 1, 0)`
 ---@return {x: 0, y: 1, z: 0}
 function Global.getTransformUp() end
-
 
 ---Returns all of the Objects in the game world
 ---@return Object[]
@@ -123,7 +120,6 @@ function Global.getComponentInChildren(name) end
 --# Global Functions
 ---These functions can be used on Objects, but can also be used on the game world using `Global`.
 
-
 ---Add a Decal onto an object or the game world
 ---
 ---@param parameters Decal.Parameters A Table of parameters used to determine how the function will act.
@@ -154,7 +150,6 @@ function Global.getComponentInChildren(name) end
 ---
 --
 function Global.addDecal(parameters) end
-
 
 ---Calls a Lua function on the Global script and passes an optional table as parameters to the function.
 ---
@@ -222,7 +217,6 @@ function Global.call(function_name, parameters) end
 ---```
 function Global.getDecals() end
 
-
 ---Get the Global Lua script.
 ---
 ---@return string
@@ -274,7 +268,6 @@ function Global.getVar(var_name) end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#getvectorlines)
 ---
 function Global.getVectorLines() end
-
 
 ---Sets which decals are on the game world. This removes other decals already present, and can remove all decals as well.
 ---@param decals Decal.Parameters[] A table of Decal Properties to set on the Global.

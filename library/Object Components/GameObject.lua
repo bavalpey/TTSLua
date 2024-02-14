@@ -89,7 +89,7 @@ function GameObject.getComponentInChildren(name) end
 function GameObject.getComponents(name) end
 
 ---Return a list of Components found by searching the GameObject and its
----[children](https://api.tabletopsimulator.com/components/gameobject/#getchildren) recursively (depth first). 
+---[children](https://api.tabletopsimulator.com/components/gameobject/#getchildren) recursively (depth first).
 ---@param name? string When specified, only Components with this `name` will be included.
 ---@return Component[]
 ---

@@ -1,6 +1,5 @@
 ---@meta dynamic
 
-
 ---MoonSharp offers a dynamic module which allows for expression evaluation without compiling Lua bytecode using the
 ---current execution context.
 ---@class dynamiclib

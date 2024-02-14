@@ -1,6 +1,5 @@
 ---@meta Input
 
-
 ---@alias Input.Enums.Alignment
 ---|> 1 Automatic
 ---|> 2 Left
@@ -73,7 +72,6 @@
 ---@field value? string Text entered into the input. *Optional, defaults to an empty string.*
 ---@field validation? Input.Enums.Validation The type of validation the input will use. *Optional, defaults to 1.*
 ---@field tab? Input.Enums.Tab How the pressing of "tab" is handled when inputting. *Optional, defaults to 1.*
-
 
 ---Passed to `Object.editInput` to modify the properties of an existing Input.
 ---

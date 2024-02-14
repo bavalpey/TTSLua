@@ -45,7 +45,7 @@
 ---@field type "Spring"
 ---@field joint_object_guid string The GUID of the connected object.
 ---Whether collision is enabled between bodies connected with this joint. *Optional, defaults to false*
----@field collision bool 
+---@field collision bool
 ---@field break_force? float Force required to break the joint. *Optional, defaults to infintiy*
 ---Torque required to break the joint.
 ---*Optional, defaults to infintiy*<ul>**⚠️ This parameter is spelled as "break_torgue" internally**</ul>
@@ -77,9 +77,6 @@
 ---
 ---[Open Documentation](https://kb.tabletopsimulator.com/game-tools/joint-tool/)
 ---
-
-
-
 
 ---
 ---Parameters passed to [jointTo()](https://api.tabletopsimulator.com/object/#jointto) to create a Hinge joint.
@@ -143,8 +140,6 @@
 ---[Open Documentation](https://kb.tabletopsimulator.com/game-tools/joint-tool/)
 ---
 
-
-
 ---Parameters passed to [jointTo()](https://api.tabletopsimulator.com/object/#jointto) to create a Fixed joint.
 ---@class JointType.Parameters.Fixed
 ---@field type "Fixed"
@@ -203,11 +198,6 @@
 ---
 ---[Open Documentation](https://kb.tabletopsimulator.com/game-tools/joint-tool/)
 ---
-
-
-
-
-
 
 ---@alias JointType.PropertiesKind
 ---| JointType.Properties.Spring

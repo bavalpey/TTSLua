@@ -20,11 +20,11 @@ self = ...
 ---@field banner string A banner similar to the one in the REPL interpreter.
 
 _MOONSHARP = {
-    version = "2.0.0.0",
-    platform = "limited.unity.dll.mono.clr4",
-    is_aot = false,
-    is_unity = true,
-    is_clr4 = true,
-    is_pcl = false,
-    banner = "MoonSharp 2.0.0.0 [limited.unity.dll.mono.clr4]\\nCopyright (C) 2014-2016 Marco Mastropaolo\\nhttp://www.moonsharp.org\n"
+	version = "2.0.0.0",
+	platform = "limited.unity.dll.mono.clr4",
+	is_aot = false,
+	is_unity = true,
+	is_clr4 = true,
+	is_pcl = false,
+	banner = "MoonSharp 2.0.0.0 [limited.unity.dll.mono.clr4]\\nCopyright (C) 2014-2016 Marco Mastropaolo\\nhttp://www.moonsharp.org\n",
 }

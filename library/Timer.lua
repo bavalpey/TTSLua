@@ -13,7 +13,6 @@
 --->The "identifiers" are shared between Global and all Object scripts, so each Timer must have a unique name.
 Timer = {}
 
-
 ---@deprecated
 ---@class TimerParameters
 ---@field identifier string Timer's name, used to destroy it. Must be unique within all other scripts.
@@ -54,7 +53,6 @@ Timer = {}
 --->If your timer is on an Object, a good way to establish a unique identifier for it is to use the item's GUID!
 ---@deprecated
 function Timer.create(parameters) end
-
 
 ---Destroys a Timer. A timer, if it completes its number of repetitions, will automatically destroy itself.
 ---@param identifier string The unique identifier for the timer you want to destroy.

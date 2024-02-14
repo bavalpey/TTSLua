@@ -201,7 +201,6 @@ function rawset(table, index, value) end
 ---@nodiscard
 function select(index, ...) end
 
-
 ---@class metatable
 ---@field __mode 'v'|'k'|'kv'|nil
 ---@field __metatable any|nil
@@ -310,7 +309,6 @@ _VERSION = "MOONSHARP 2.0.0.0"
 ---@return any result
 ---@return any ...
 function xpcall(f, msgh, arg1, ...) end
-
 
 ---Returns the elements from the given `list`. This function is equivalent to
 ---```lua

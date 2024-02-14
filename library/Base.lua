@@ -8,7 +8,6 @@
 ---## Global Functions
 ---General functions which work within any script.
 
-
 ---Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.
 ---@param label string Label for the menu item.
 ---@param toRunFunc fun(player_color: string, menu_position: Vector) Execute if menu item is selected.<ul>`player_color` — [Player Color](https://api.tabletopsimulator.com/player/colors/) who selected the menu item.<br>`menu_position` — Global position of the right-click context menu.</ul>
@@ -123,7 +122,6 @@ function getObjectFromGUID(guid) end
 ---[Open Documentation](https://api.tabletopsimulator.com/base/#getobjects)
 ---
 function getObjects() end
-
 
 ---Return a table of all [Objects](https://api.tabletopsimulator.com/object/) that have the specified tag attached.
 ---@param tag string The tag to search for.
@@ -377,7 +375,6 @@ function spawnObjectData(parameters) end
 ---
 function spawnObjectJSON(parameters) end
 
-
 ---Start a coroutine. A coroutine is similar to a function, but has the unique ability to have its run paused until the
 ---next frame of the game using `coroutine.yield(0)`.
 ---@param function_owner Object The Object that the function being called is on. Global is a valid target.
@@ -419,7 +416,6 @@ function spawnObjectJSON(parameters) end
 ---
 function startLuaCoroutine(function_owner, function_name) end
 
-
 ---Converts a [Player Color](https://api.tabletopsimulator.com/player/colors/) string to a Color Table for tinting.
 ---@param player_color string A string of a [Player Color](https://api.tabletopsimulator.com/player/colors/).
 ---@return Color
@@ -429,8 +425,6 @@ function startLuaCoroutine(function_owner, function_name) end
 function stringColorToRGB(player_color) end
 
 ---# Hotkey Functions
-
-
 
 ---The definition for a hotkey callback function, with annotations on the parameters.
 ---@private
@@ -543,7 +537,7 @@ function broadcastToColor(message, player_color, message_tint) end
 --->If `value` is not already a `string`, then it will be converted to a human\-readable representation.
 --->
 --->If `value` is a `table`, then the table's contents (keys & values) will be displayed. The contents of nested tables
---->will also be displayed up to a user-configurable depth. Users can configure the max depth via the 
+--->will also be displayed up to a user-configurable depth. Users can configure the max depth via the
 --->`log_max_table_depth` System Console command.
 ---
 --->As an advanced feature, multiple log tags may be provided by space-separating several tags (in the one String)

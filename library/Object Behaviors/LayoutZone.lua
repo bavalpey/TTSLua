@@ -25,7 +25,6 @@
 ---@field vertical_group_padding? float How much vertical space is inserted between groups.
 ---@field vertical_spread? float How far each object in a group is moved vertically from the previous object.
 
-
 ---# Options
 ---Layout zone option tables may contain the following properties
 ---
@@ -58,7 +57,6 @@
 ---@field trigger_for_non_cards bool Non-card objects dropped on zone will be laid out
 ---@field vertical_group_padding float How much vertical space is inserted between groups.
 ---@field vertical_spread float How far each object in a group is moved vertically from the previous object.
-
 
 ---# LayoutZone
 ---The LayoutZone behavior is present on [Layout Zones](https://kb.tabletopsimulator.com/game-tools/zone-tools/#layout-zone).

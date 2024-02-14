@@ -1,6 +1,5 @@
 ---@meta Player.Instance
 
-
 ---# Player Instance
 ---Player instances can be retrieved from the [Player Manager](https://api.tabletopsimulator.com/player/manager/) and
 ---are also frequently passed to callbacks.
@@ -22,7 +21,6 @@
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/player/instance/)
 local PlayerInstance = {}
-
 
 ---The parameters passed to `attachCameraToObject`.
 ---@class AttachCameraToObjectParameters
@@ -55,7 +53,6 @@ function PlayerInstance.attachCameraToObject(parameters) end
 ---
 function PlayerInstance.broadcast(message, message_color) end
 
-
 ---Changes player to this [Player Color](https://api.tabletopsimulator.com/player/colors/) (seat).
 ---
 ---@param player_color string The [Player Color](https://api.tabletopsimulator.com/player/colors/) to move the player to.
@@ -81,7 +78,6 @@ function PlayerInstance.changeColor(player_color) end
 ---[Open Documentation](https://api.tabletopsimulator.com/player/instance/#clearselected)
 ---
 function PlayerInstance.clearSelected() end
-
 
 ---Makes the Player take the Copy action with the specified Objects.
 ---@param objects Object[]

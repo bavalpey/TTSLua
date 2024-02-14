@@ -26,7 +26,6 @@ Physics = {}
 ---@field direction? Vector The direction of the cast. *Optional, but cast is motionless without a direction*
 ---
 
-
 ---The table returned by the `Physics.cast` function containing information about the hit Objects.
 ---@class CastReturnTable
 ---@field point Vector Position the cast impacted the Object.

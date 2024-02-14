@@ -1,6 +1,5 @@
 ---@meta SpawnObject
 
-
 ---The parameters used by the `spawnObject()` function
 ---
 ---@see SpawnObject
@@ -17,7 +16,6 @@
 ---Callback function to be called after the object has been spawned. *Optional, defaults to `nil`*
 ---@field callback_function? fun(obj: Object):any
 
-
 ---@class SpawnObjectData.Data.Transform
 ---@field posX? float
 ---@field posY? float
@@ -28,7 +26,6 @@
 ---@field scaleX? float
 ---@field scaleY? float
 ---@field scaleZ? float
-
 
 ---@class SpawnObjectData.Data.CustomShader
 ---@field CustomShader Color
@@ -41,13 +38,12 @@
 ---@class SpawnObjectData.Data.CustomMesh
 ---@field MeshUrl string The model for the 3D object
 ---@field DiffuseUrl string The primary material for the object
----@field ColliderUrl? string 
+---@field ColliderUrl? string
 ---@field Convex? bool Whether the object is convex or not (i.e. a collider with holes)
 ---@field MaterialIndex int The kind of material
 ---@field TypeIndex assetBundleType The type of the model
----@field CustomShader SpawnObjectData.Data.CustomShader 
+---@field CustomShader SpawnObjectData.Data.CustomShader
 ---@field CastShadows bool Whether the object casts shadows
-
 
 ---@alias BagOrderEnum
 ---| 0 # Last in First Out
@@ -102,12 +98,12 @@
 ---The Custom Mesh on this object. ⚠️ Only valid for Custom Model objects!
 ---@field CustomMesh? SpawnObjectData.Data.CustomMesh
 ---@field tags? string[] The tags on the object.
----# 🚨 Unknown. 
+---# 🚨 Unknown.
 ---@field MaterialIndex int
 ---# 🚨 Unknown.  Related to the custom mesh
 ---@field MeshIndex int
 ---# 🚨 Unknown.  Included on empty bags and infinite bags
----@field Number? int 
+---@field Number? int
 
 ---The parameters used by the `spawnObjectData()` function.
 ---

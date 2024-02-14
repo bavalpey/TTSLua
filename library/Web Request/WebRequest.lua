@@ -11,10 +11,9 @@
 ---@class WebRequest
 WebRequest = {}
 
-
 ---Performs a HTTP request using the specified method, data, and headers.
 ---@param url string the URL.
----@param method string The [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods). 
+---@param method string The [HTTP method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).
 ---@param download bool Whether you want to handle the response body. Must be `true` if you intend to read the response [text](https://api.tabletopsimulator.com/webrequest/instance/#text).
 ---@param headers {[string]: string} Table of request headers.
 ---@param callback_function? fun(request: WebRequestInstance) The function to call when the request completes or fails. *Optional, but you will be unable to handle the response (or errors) if unused.*

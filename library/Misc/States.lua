@@ -9,8 +9,8 @@
 ---@field lua_script string Any Lua scripting saved on the item.
 ---@field lua_script_state string Any JSON save data on this item.
 local StateData = {
-    ---A duplicate of the "name" field.<ul><ul><li>This is for backwards compatibility purposes only.</li></ul></ul>
-    ---@deprecated
-    ---@type string
-    nickname = ...
+	---A duplicate of the "name" field.<ul><ul><li>This is for backwards compatibility purposes only.</li></ul></ul>
+	---@deprecated
+	---@type string
+	nickname = ...,
 }

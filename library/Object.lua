@@ -373,14 +373,26 @@ function Object.scale(scale) end
 ---
 function Object.setAngularVelocity(vector) end
 
+---
 ---Instantly moves an Object to the given Vector. The Vector is interpreted as
 ---[World Position](https://api.tabletopsimulator.com/types/#position).
+---
+---@param vector Vector The position to move the Object to.
+---@return bool
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/object/#setposition)
+---
+function Object.setPosition(vector) end
+
+
 
 ---
 ---Smoothly moves this Object from its current position to a given world space position.
 ---@param position Vector A [positional](https://api.tabletopsimulator.com/types/#position) world space vector.
----@param collide bool If the object will collide with other objects while moving.
----@param fast bool If the object is moved quickly.
+---@param collide? bool If the object will collide with other objects while moving.
+---@param fast? bool If the object is moved quickly.
 ---@return bool
 ---
 ---***

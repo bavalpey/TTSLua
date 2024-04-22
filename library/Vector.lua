@@ -8,7 +8,6 @@
 ---```
 
 ---@class Vector: float[]
----@field __version int
 ---@field [1] float
 ---@field [2] float
 ---@field [3] float

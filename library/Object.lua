@@ -386,8 +386,6 @@ function Object.setAngularVelocity(vector) end
 ---
 function Object.setPosition(vector) end
 
-
-
 ---
 ---Smoothly moves this Object from its current position to a given world space position.
 ---@param position Vector A [positional](https://api.tabletopsimulator.com/types/#position) world space vector.

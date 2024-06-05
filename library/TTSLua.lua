@@ -1,8 +1,8 @@
 ---@meta TTSLua
 
----@class (exact) float: number
----@class (exact) int: integer
----@class (exact) bool: boolean
+---@alias (exact) float number
+---@alias (exact) int integer
+---@alias (exact) bool boolean
 
 ---@type Object|Global
 self = ...

@@ -17,6 +17,10 @@
 ---@field public [2] float
 ---@field public [3] float
 ---@field public [4] float
+---@field public r float
+---@field public g float
+---@field public b float
+---@field public a float
 ---Returns a table of all color strings.
 ---```
 ---data = Color.list
@@ -40,12 +44,21 @@
 ---[Open Documentation](https://api.tabletopsimulator.com/color/#colorlist)
 ---@field public list string[]
 ---@overload fun(r?: float, g?: float, b?: float, a?: float):Color
----@overload fun(v: float[]):Color
+---@overload fun(v: ColorLike):Color
 Color = {}
+
+---A table with r, g, b, and a components. Any methods that accept a `Color` object can also accept a table with these keys.
+---@class (exact) RGBATable: float[]
+---@field r? float Red component. When not present, defaults to 0.
+---@field g? float Green component. When not present, defaults to 0.
+---@field b? float Blue component. When not present, defaults to 0.
+---@field a? float Alpha component. When not present, defaults to 1.
+
+---@alias ColorLike Color | RGBATable
 
 ---## Constructors summary
 --->### 🔥 Tip
---->Every place that returns a coordinate table, `like obj.getColorTint()`, serves a Color class instance already - you
+--->Every place that returns a coordinate table, like `obj.getColorTint()`, serves a Color class instance already - you
 --->do not have to explicitly construct it. When constructing Color instances, the `.new` part can be omitted, making
 --->e.g. `Color(1, 0.5, 0.75)` equivalent to `Color.new(1, 0.5, 0.75)`.
 ---
@@ -258,7 +271,7 @@ function Color:toString(tolerance) end
 function Color:equals(otherCol, num) end
 
 ---Return a color some part of the way between self and `otherCol`, numeric arg \[0, 1\] is the fraction.
----@param otherCol Color The color to compare with.
+---@param otherCol ColorLike The color to compare with.
 ---@param fraction float Numeric ``fraction``.
 ---@return Color
 ---
@@ -275,6 +288,10 @@ function Color:equals(otherCol, num) end
 ---[Open Documentation](https://api.tabletopsimulator.com/color/#lerp)
 ---
 function Color:Lerp(otherCol, fraction) end
+
+local x = Color()
+
+x:Lerp({ 1, 2, 3, 4 }, 2)
 
 ---Return a string description of a color with an optional `prefix`.
 ---@return string 1 The string description of the color.
@@ -306,7 +323,7 @@ function Color:dump(prefix) end
 ---Add your own color definition to the class
 ---
 ---@param name string The name of the color to add.
----@param yourColor Color The value the color will be.
+---@param yourColor ColorLike The value the color will be.
 ---
 ---***
 ---

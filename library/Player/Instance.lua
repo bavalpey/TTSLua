@@ -235,7 +235,7 @@ function PlayerInstance.mute() end
 
 ---Makes the Player take the Paste action at the specified position
 ---
----@param position Vector The position to paste at.
+---@param position VectorLike The position to paste at.
 ---@return bool
 ---
 ---***
@@ -253,7 +253,7 @@ function PlayerInstance.paste(position) end
 
 ---Emulates the player using the ping tool at the given position (tapping Tab).
 ---
----@param position Vector The position to ping.
+---@param position VectorLike The position to ping.
 ---@return bool
 ---
 ---***

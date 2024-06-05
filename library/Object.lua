@@ -282,7 +282,7 @@ function Object.isSmoothMoving() end
 ---world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given
 ---object.
 ---
----@param vector Vector The world position to convert into a local position.
+---@param vector VectorLike The world position to convert into a local position.
 ---@return Vector
 ---
 ---***
@@ -300,7 +300,7 @@ function Object.positionToLocal(vector) end
 ---world's coordinate system. A Local Vector is a positional Vector that is relative to the position of the given
 ---object.
 ---
----@param vector Vector The local position to convert into a world position.
+---@param vector VectorLike The local position to convert into a world position.
 ---@return Vector
 ---
 ---***
@@ -318,7 +318,7 @@ function Object.positionToWorld(vector) end
 
 ---Rotates Object smoothly in the direction of the given Vector. This does not set the Object to face a specific
 ---rotation, it rotates the Object around by the number of degrees given for x/y/z.
----@param rotation Vector The amount of x/y/z to rotate by.
+---@param rotation VectorLike The amount of x/y/z to rotate by.
 ---@return bool
 ---
 ---***
@@ -341,7 +341,7 @@ function Object.rotate(rotation) end
 ---
 ---Scales this Object by the given amount.
 ---
----@param scale Vector Multiplier for scale.
+---@param scale VectorLike Multiplier for scale.
 ---@return bool
 ---
 ---***
@@ -364,7 +364,7 @@ function Object.scale(scale) end
 
 ---Sets a Vector as the current angular velocity
 ---
----@param vector Vector The new angular velocity.
+---@param vector VectorLike The new angular velocity.
 ---@return bool
 ---
 ---***
@@ -377,7 +377,7 @@ function Object.setAngularVelocity(vector) end
 ---Instantly moves an Object to the given Vector. The Vector is interpreted as
 ---[World Position](https://api.tabletopsimulator.com/types/#position).
 ---
----@param vector Vector The position to move the Object to.
+---@param vector VectorLike The position to move the Object to.
 ---@return bool
 ---
 ---***
@@ -388,7 +388,7 @@ function Object.setPosition(vector) end
 
 ---
 ---Smoothly moves this Object from its current position to a given world space position.
----@param position Vector A [positional](https://api.tabletopsimulator.com/types/#position) world space vector.
+---@param position VectorLike A [positional](https://api.tabletopsimulator.com/types/#position) world space vector.
 ---@param collide? bool If the object will collide with other objects while moving.
 ---@param fast? bool If the object is moved quickly.
 ---@return bool
@@ -401,7 +401,7 @@ function Object.setPositionSmooth(position, collide, fast) end
 
 ---Instantly rotates this Object to the given Vector.
 ---
----@param vector Vector The new rotation.
+---@param vector VectorLike The new rotation.
 ---@return bool
 ---
 ---***
@@ -411,7 +411,7 @@ function Object.setPositionSmooth(position, collide, fast) end
 function Object.setRotation(vector) end
 
 ---Smoothly rotates this Object to the given orientation in degrees.
----@param rotation Vector A [rotational](https://api.tabletopsimulator.com/types/#rotation) vector.
+---@param rotation VectorLike A [rotational](https://api.tabletopsimulator.com/types/#rotation) vector.
 ---@param collide bool
 ---@param fast bool
 ---@return bool
@@ -424,7 +424,7 @@ function Object.setRotationSmooth(rotation, collide, fast) end
 
 ---Sets a Vector as the current scale.
 ---
----@param scale Vector The new scale.
+---@param scale VectorLike The new scale.
 ---@return bool
 ---
 ---***
@@ -435,7 +435,7 @@ function Object.setScale(scale) end
 
 ---Set this Object's velocity to the given Vector.
 ---
----@param vector Vector The new velocity.
+---@param vector VectorLike The new velocity.
 ---@return bool
 ---
 ---***
@@ -446,7 +446,7 @@ function Object.setVelocity(vector) end
 
 ---Smoothly moves this Object by the given Vector offset.
 ---
----@param vector Vector The Vector to move the Object by.
+---@param vector VectorLike The Vector to move the Object by.
 ---@return bool
 ---
 ---***
@@ -720,7 +720,7 @@ function Object.editButton(parameters) end
 ---them will cause the edited input's element to remain. Indexes start at 0. The first input on any given Object has
 ---an index of 0, the next input on it has an index of 1, etc. Each Object has its own indexes.
 ---
----@param parameters Button.Parameters.Edit A Table containing the information used to edit the input.
+---@param parameters Input.Parameters.Edit A Table containing the information used to edit the input.
 ---@return bool
 ---
 ---#### Example Usage
@@ -736,7 +736,7 @@ function Object.editButton(parameters) end
 ---
 ---@see Object.getInputs
 ---@see Object.createInput
----@see Button.Parameters.Edit
+---@see Input.Parameters.Edit
 function Object.editInput(parameters) end
 
 ---Returns a Table of all buttons on this Object. The Table contains parameters tables with the same keys as seen in
@@ -1192,7 +1192,7 @@ function Object.isDestroyed() end
 
 ---Sets the color tint.
 ---
----@param color Color
+---@param color ColorLike
 ---@return bool
 ---
 ---***
@@ -1504,7 +1504,7 @@ function Object.cut(count) end
 function Object.deal(number, player_color, index) end
 
 ---Deals a Card to a player with an offset from their hand.
----@param offset Vector The x/y/z offset to deal around the given hand zone.
+---@param offset VectorLike The x/y/z offset to deal around the given hand zone.
 ---@param flip bool If the card is flipped over when dealt.
 ---@param player_color string Hand zone [Player Color](https://api.tabletopsimulator.com/player/colors/) to offset dealing to.
 ---@return Object
@@ -1579,7 +1579,7 @@ function Object.flip() end
 function Object.highlightOff() end
 
 ---Highlight this object with color for an optional duration.
----@param color Color The color to highlight the object with.
+---@param color ColorLike The color to highlight the object with.
 ---@param duration? float The number of seconds this object will remain highlighted.
 ---@return bool
 ---

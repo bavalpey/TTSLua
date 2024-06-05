@@ -26,7 +26,7 @@ function TextTool.getValue() end
 
 ---
 ---Set the color of the font.
----@param color Color
+---@param color ColorLike
 ---@return bool
 function TextTool.setColor(color) end
 

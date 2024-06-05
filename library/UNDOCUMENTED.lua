@@ -103,8 +103,6 @@ function setGlobalScriptVar(name, value) end
 ---@deprecated
 function getGlobalScriptTable(name) end
 
----Undocumented function that sets/updates a variable of type `table` in the global script.
-
 ---@param obj Object The object that owns the function you wish to call
 ---@param func string The name of the function to call
 ---@return any # Returns whatever the called function returns. 🚨 Be careful using the returned value if the function returns nil. In testing this undocumented function, its behavior was erratic.

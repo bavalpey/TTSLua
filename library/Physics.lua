@@ -100,7 +100,7 @@ function Physics.cast(parameters) end
 function Physics.getGravity() end
 
 ---Sets the direction gravity pulls.
----@param gravity Vector The new gravity vector.
+---@param gravity VectorLike The new gravity vector.
 ---@return bool
 ---
 ---***

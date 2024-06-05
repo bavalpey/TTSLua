@@ -16,7 +16,7 @@
 ---@class Grid
 ---@field type GridTypeEnum The type of the grid.
 ---@field show_lines bool Visibility of the grid lines.
----@field color Color Color of the grid lines.
+---@field color ColorLike Color of the grid lines.
 ---@field opacity float Opacity of the grid lines.
 ---@field thick_lines bool Thickness of the grid lines. false = Thin, true = Thick.
 ---@field snapping GridSnappingEnum Method of snapping objects to the grid.

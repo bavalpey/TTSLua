@@ -15,9 +15,9 @@
 ---@field y? float
 ---@field z? float
 ---@overload fun(x?: float, y?: float, z?: float):Vector
----@overload fun(v: float[]):Vector
----@operator add(Vector):Vector
----@operator sub(Vector):Vector
+---@overload fun(v: VectorLike):Vector
+---@operator add(VectorLike):Vector
+---@operator sub(VectorLike):Vector
 ---@operator mul(float):Vector
 ---
 ---***
@@ -26,6 +26,15 @@
 ---
 Vector = {}
 
+---A table with x, y, and z keys that all have float values. Any function that accepts a Vector will also accept this.
+---@class XYZTable: float[]
+---@field x? float The x component. If not present, defaults to 0.
+---@field y? float The y component. If not present, defaults to 0.
+---@field z? float The z component. If not present, defaults to 0.
+
+
+---@alias VectorLike Vector | XYZTable
+
 ---Return a vector with specified (x, y, z) components.
 ---@param x float
 ---@param y float
@@ -33,8 +42,8 @@ Vector = {}
 ---@return Vector
 function Vector.new(x, y, z) end
 ---Returns a vector that is made from the smallest components of two vectors.
----@param vec1 Vector First vector.
----@param vec2 Vector Second vector.
+---@param vec1 VectorLike First vector.
+---@param vec2 VectorLike Second vector.
 ---@return Vector
 ---```
 ---vec1 = Vector(1, 2, 3)
@@ -49,8 +58,8 @@ function Vector.new(x, y, z) end
 function Vector.min(vec1, vec2) end
 
 ---Returns a vector that is made from the largest components of two vectors.
----@param vec1 Vector First vector.
----@param vec2 Vector Second vector.
+---@param vec1 VectorLike First vector.
+---@param vec2 VectorLike Second vector.
 ---@return Vector
 ---```
 ---vec1 = Vector(1, 2, 3)
@@ -65,8 +74,8 @@ function Vector.min(vec1, vec2) end
 function Vector.max(vec1, vec2) end
 
 ---Return a vector pointing from vec1 to vec2.
----@param vec1 Vector First vector.
----@param vec2 Vector Second vector.
+---@param vec1 VectorLike First vector.
+---@param vec2 VectorLike Second vector.
 ---@return Vector
 ---```
 ---vec1 = Vector(1, 2, 3)
@@ -78,7 +87,7 @@ function Vector.max(vec1, vec2) end
 function Vector.between(vec1, vec2) end
 
 ---Update one component of the vector and returning self.
----@param key int Index of component (1, 2 or 3 for x, y or z).
+---@param key int|'x'|'y'|'z' Index of component (1, 2 or 3 for x, y or z).
 ---@param num float New value.
 ---@return Vector self
 ---```
@@ -91,7 +100,7 @@ function Vector.between(vec1, vec2) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#setat)
 ---
-function Vector.setAt(key, num) end
+function Vector:setAt(key, num) end
 
 ---Update all components of the vector and returning self.
 ---
@@ -110,7 +119,7 @@ function Vector.setAt(key, num) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#set)
 ---
-function Vector.set(x, y, z) end
+function Vector:set(x, y, z) end
 
 ---Returns ``x``, ``y``, ``z`` components as three separate values.
 ---@return float, float, float
@@ -143,7 +152,7 @@ function Vector.get() end
 function Vector.copy() end
 
 ---	Adds components of otherVec to self.
----@param otherVec Vector The vector to add.
+---@param otherVec VectorLike The vector to add.
 ---@return Vector self
 ---```
 ---vec = Vector(1, 2, 3)
@@ -163,7 +172,7 @@ function Vector.copy() end
 function Vector:add(otherVec) end
 
 ---Subtracts components of otherVec from self.
----@param otherVec Vector The vector to subtracts.
+---@param otherVec VectorLike The vector to subtracts.
 ---@return Vector self
 ---
 ---***
@@ -171,7 +180,7 @@ function Vector:add(otherVec) end
 function Vector:sub(otherVec) end
 
 ---Multiplies self-components by corresponding components from otherVec.
----@param otherVec Vector The vector to scale.
+---@param otherVec VectorLike The vector to scale.
 ---@return Vector self
 ---```
 ---vec = Vector(1, 2, 3)
@@ -232,7 +241,7 @@ function Vector:normalize(otherVec) end
 ---To understand vector projection, imagine that otherVec is resting on a line pointing in its direction.
 ---Somewhere along that line will be the nearest point to the tip of vector.
 ---The projection is just otherVec rescaled so that it reaches that point on the line.
----@param otherVec Vector The normal vector.
+---@param otherVec VectorLike The normal vector.
 ---@return Vector self
 ---```
 ---vec = Vector(2, 1, 4)
@@ -252,7 +261,7 @@ function Vector:project(otherVec) end
 ---and defines a direction from a plane towards vector that passes through the origin.
 ---Vector.projectOnPlane uses the two Vector values to generate the position of vector
 ---in the `otherVec` direction, and return the location of the Vector on the plane.
----@param otherVec Vector The plane normal vector.
+---@param otherVec VectorLike The plane normal vector.
 ---```
 ---vec = Vector(2, 1, 4)
 ---vec:projectOnPlane(Vector(1, - 2, 1))
@@ -270,7 +279,7 @@ function Vector:projectOnPlane(otherVec) end
 --- The `otherVec` vector defines a plane (a plane's normal is the vector that is perpendicular to its surface).
 --- The ``vec`` vector is treated as a directional arrow coming in to the plane.
 --- The returned value is a vector of equal magnitude to vec but with its direction reflected.
----@param otherVec Vector The normal vector.
+---@param otherVec VectorLike The normal vector.
 ---@return Vector
 ---```
 ---vec = Vector(1, 2, 3)
@@ -297,7 +306,7 @@ function reflect(otherVec) end
 function inverse() end
 
 ---Move self towards another vector, but only up to a provided distance limit and return self.
----@param target Vector The position to move towards.
+---@param target VectorLike The position to move towards.
 ---@param num float The distance limit.
 ---@return Vector self
 ---```
@@ -318,7 +327,7 @@ function Vector:moveTowards(target, num) end
 ---although it will land exactly on the target rather than overshoot. If the magnitudes of current and target are different,
 ---then the magnitude of the result will be linearly interpolated during the rotation. If a negative value is used for `maxAngle`,
 ---the vector will rotate away from target until it is pointing in exactly the opposite direction, then stops.
----@param target Vector The position to rotate towards.
+---@param target VectorLike The position to rotate towards.
 ---@param maxAngle float
 ---
 ---***
@@ -360,8 +369,8 @@ function Vector:rotateOver(axis, angle) end
 ---The dot product is a float value equal to the magnitudes of the two vectors multiplied together and then multiplied by the cosine of the angle between them.
 ---
 ---For normalized vectors Dot returns 1 if they point in exactly the same direction, -1 if they point in completely opposite directions and zero if the vectors are perpendicular.
----@param vec1 Vector First vector.
----@param vec2 Vector Second vector.
+---@param vec1 VectorLike First vector.
+---@param vec2 VectorLike Second vector.
 ---@return float
 ---```
 ---vec1 = Vector(0, 1, 2)
@@ -399,8 +408,8 @@ function Vector:magnitude() end
 function Vector:sqrMagnitude() end
 
 ---Returns distance between two points.
----@param p1 Vector First point.
----@param p2 Vector Second point.
+---@param p1 VectorLike First point.
+---@param p2 VectorLike Second point.
 ---@return float
 ---```
 ---p1 = Vector(1, 2, 3)
@@ -414,8 +423,8 @@ function Vector:sqrMagnitude() end
 function Vector.distance(p1, p2) end
 
 ---Returns squared distance between two points.
----@param p1 Vector First point.
----@param p2 Vector Second point.
+---@param p1 VectorLike First point.
+---@param p2 VectorLike Second point.
 ---@return float
 ---```
 ---p1 = Vector(1, 2, 3)
@@ -428,8 +437,8 @@ function Vector.distance(p1, p2) end
 function Vector.sqrDistance(p1, p2) end
 
 ---Returns true if two vectors are approximately equal. The ``margin`` argument is optional and defaults to tolerating a difference of ``~0.03`` in both vector magnitude.
----@param vec1 Vector First vector.
----@param vec2 Vector Second vector.
+---@param vec1 VectorLike First vector.
+---@param vec2 VectorLike Second vector.
 ---@param margin? float Numeric tolerance.
 ---```
 ---vec1 = Vector(1, 2, 3.10)
@@ -459,8 +468,8 @@ function Vector.equals(vec1, vec2, margin) end
 function Vector:string(prefix) end
 
 ---Returns the angle in degrees between two vectors.
----@param vec1 Vector First vector.
----@param vec2 Vector Second vector.
+---@param vec1 VectorLike First vector.
+---@param vec2 VectorLike Second vector.
 ---@return float
 ---```
 ---vec1 = Vector(1, 2, 3)
@@ -481,8 +490,8 @@ function Vector.angle(vec1, vec2) end
 ---The result's magnitude is equal to the magnitudes of the two inputs multiplied together and then multiplied
 ---by the sine of the angle between the inputs. You can determine the direction of the result vector using the
 ---"left hand rule".
----@param vec1 Vector First vector.
----@param vec2 Vector Second vector.
+---@param vec1 VectorLike First vector.
+---@param vec2 VectorLike Second vector.
 ---@return Vector
 ---```
 ---vec1 = Vector(1, 2, 3)
@@ -506,8 +515,8 @@ function Vector.cross(vec1, vec2) end
 ---
 ---The value returned equals (b - a) * t. When t = 0 returns a. When t = 1 returns b. When t = 0.5
 ---returns the point midway between a and b.
----@param p1 Vector First point.
----@param p2 Vector Second point.
+---@param p1 VectorLike First point.
+---@param p2 VectorLike Second point.
 ---@param t float Fraction.
 ---```
 ---p1 = Vector(1, 2, - 4)

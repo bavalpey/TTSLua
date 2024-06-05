@@ -74,7 +74,7 @@ function Lighting.getAmbientSkyColor() end
 function Lighting.getLightColor() end
 
 ---Set the Color of the gradient equator. Not used if `ambient_type = 1`.
----@param tint Color The new Color
+---@param tint ColorLike The new Color
 ---@return bool
 ---
 ---***
@@ -84,7 +84,7 @@ function Lighting.getLightColor() end
 function Lighting.setAmbientEquatorColor(tint) end
 
 ---Set the Color of the gradient ground. Not used if `ambient_type = 1`.
----@param tint Color The color to set the ground to.
+---@param tint ColorLike The color to set the ground to.
 ---@return bool
 ---
 ---***
@@ -94,7 +94,7 @@ function Lighting.setAmbientEquatorColor(tint) end
 function Lighting.setAmbientGroundColor(tint) end
 
 ---Set the Color of the gradient sky. Not used if `ambient_type = 1`.
----@param tint Color The color to set the sky to.
+---@param tint ColorLike The color to set the sky to.
 ---@return bool
 ---
 ---***
@@ -104,7 +104,7 @@ function Lighting.setAmbientGroundColor(tint) end
 function Lighting.setAmbientSkyColor(tint) end
 
 ---Set the Color of the directional light, which shines straight down on the table.
----@param tint Color The Color to set the directional light to.
+---@param tint ColorLike The Color to set the directional light to.
 ---@return bool
 ---
 ---***

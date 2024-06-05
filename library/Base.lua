@@ -10,7 +10,7 @@
 
 ---Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.
 ---@param label string Label for the menu item.
----@param toRunFunc fun(player_color: string, menu_position: Vector) Execute if menu item is selected.<ul>`player_color` — [Player Color](https://api.tabletopsimulator.com/player/colors/) who selected the menu item.<br>`menu_position` — Global position of the right-click context menu.</ul>
+---@param toRunFunc fun(player_color: string, menu_position: VectorLike) Execute if menu item is selected.<ul>`player_color` — [Player Color](https://api.tabletopsimulator.com/player/colors/) who selected the menu item.<br>`menu_position` — Global position of the right-click context menu.</ul>
 ---@param keep_open? bool Whether to keep the Context Menu open after menu item was selected. *Optional, Default: keep_open = false*
 ---@param require_table? bool Show Added menu item when right-clicked on empty space or table. *Optional, Default: require_table = false*
 ---
@@ -430,7 +430,7 @@ function stringColorToRGB(player_color) end
 ---@private
 ---@param playerColor string Player Color of the player that pressed the hotkey.
 ---@param hoveredObject Object The object that the Player's pointer was hovering over at the moment the key was pressed/released. `nil` if no object was under the Player's pointer at the time
----@param pointerPosition Vector World Position of the Player's pointer at the moment the key was pressed/released.
+---@param pointerPosition VectorLike World Position of the Player's pointer at the moment the key was pressed/released.
 ---@param isKeyUp bool Whether this callback is being triggered in response to a hotkey being released.
 function addHotkeyCallback(playerColor, hoveredObject, pointerPosition, isKeyUp) end
 
@@ -508,7 +508,7 @@ function broadcastToAll(message, message_tint) end
 ---Print an on-screen message to a specific Player, as well as their in-game chat.
 ---@param message string The message to be displayed.
 ---@param player_color string [Player Color](https://api.tabletopsimulator.com/player/colors/) to receive the message.
----@param message_tint? Color RBG color tint for the text.
+---@param message_tint? ColorLike RBG color tint for the text.
 ---
 ---***
 ---
@@ -598,8 +598,8 @@ function logString(value, label, tags, concise, displayTag) end
 
 ---@param tag string A string identifying this log style.
 ---@param tint string|Color RBG value to tint the log entry's text. *String color will also work. Example: "Red"
----@param prefix string Text to place before this type of log entry. *Optional, defaults to an empty string. Empty strings are not displayed.*
----@param postfix string Text to place after this type of log entry. *Optional, defaults to an empty string. Empty strings are not displayed.*
+---@param prefix? string Text to place before this type of log entry. *Optional, defaults to an empty string. Empty strings are not displayed.*
+---@param postfix? string Text to place after this type of log entry. *Optional, defaults to an empty string. Empty strings are not displayed.*
 ---@return bool
 ---
 ---***

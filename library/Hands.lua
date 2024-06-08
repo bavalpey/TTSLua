@@ -4,9 +4,9 @@
 
 ---The parameters used by the`PlayerInstance.setHandTransform` function.
 ---@class Hands.Transform.Parameters
----@field position? Vector Position of the hand zone. *Optional, deaults to {x=0, y=0, z=0}*
----@field rotation? Vector Rotation of the hand zone. *Optional, defaults to {x=0, y=0, z=0}*
----@field scale? Vector Scale of the hand zone. *Optional, defaults to {x=0, y=0, z=0}*<br>&emsp;&emsp; + ⚠️ If the scale is set to 0, the player's hand will exist, but will be unable to contain any Objects.
+---@field position? VectorLike Position of the hand zone. *Optional, deaults to {x=0, y=0, z=0}*
+---@field rotation? VectorLike Rotation of the hand zone. *Optional, defaults to {x=0, y=0, z=0}*
+---@field scale? VectorLike Scale of the hand zone. *Optional, defaults to {x=0, y=0, z=0}*<br>&emsp;&emsp; + ⚠️ If the scale is set to 0, the player's hand will exist, but will be unable to contain any Objects.
 
 ---@class Hands.Transform.Properties
 ---@field position Vector Position of the hand zone.

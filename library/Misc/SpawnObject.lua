@@ -7,9 +7,9 @@
 ---[Built-in](https://api.tabletopsimulator.com/built-in-object/) or
 ---[Custom Game Object](https://api.tabletopsimulator.com/custom-game-objects/) name.
 ---@field type string
----@field position? Vector Position where the object will be spawned. *Optional, defaults to `{0, 0, 0}`*
----@field rotation? Vector Rotation of the spawned object. *Optional, defaults to `{0, 0, 0}`*
----@field scale? Vector Scale of the spawned object. *Optional, defaults to `{1, 1, 1`}*
+---@field position? VectorLike Position where the object will be spawned. *Optional, defaults to `{0, 0, 0}`*
+---@field rotation? VectorLike Rotation of the spawned object. *Optional, defaults to `{0, 0, 0}`*
+---@field scale? VectorLike Scale of the spawned object. *Optional, defaults to `{1, 1, 1`}*
 ---@field sound? bool Whether a sound will be played as the object spawns. *Optional, defaults to `true`*
 ---Whether the object will snap to nearby grid lines or points on spawning. *Optional, defaults to `false`*
 ---@field snap_to_grid? bool
@@ -28,7 +28,7 @@
 ---@field scaleZ? float
 
 ---@class SpawnObjectData.Data.CustomShader
----@field CustomShader Color
+---@field CustomShader ColorLike
 ---@field SpecularIntensity float
 ---@field SpecularSharpness int
 ---@field FresnelStrength int
@@ -62,8 +62,8 @@
 ---@field Nickname? string The nickname of the object that appears on its tooltip
 ---@field Description? string The description of the object that appears on its tooltip *Defaults to an empty string*
 ---@field GMNotes? string The GM notes of the object visible to the Black player *Defaults to an empty string*
----@field AltLookAngle? Vector The alternate look angle of the object *Defaults to `{0, 0, 0}`*
----@field ColorDiffuse? Color The diffuse color of the object.
+---@field AltLookAngle? VectorLike The alternate look angle of the object *Defaults to `{0, 0, 0}`*
+---@field ColorDiffuse? ColorLike The diffuse color of the object.
 ---@field LayoutGroupSortIndex? int The layout group sort index of the object *Defaults to `0`*
 ---@field Value? any The value of the object. What this means depends on the type of object.
 ---@field Locked? bool Whether the object should spawn locked *Defaults to false*
@@ -88,7 +88,7 @@
 ---@field MeasureMovement? bool
 ---@field LuaScriptState? string A json string for the Lua script state on the object *Defaults to an empty string*
 ---@field XmlUI? string The string of the XML UI of the object *Defaults to an empty string*
----@field RotationValues? {Value: int, Rotation: Vector}[] The rotation values on this object. *Defaults to an empty array*
+---@field RotationValues? {Value: int, Rotation: VectorLike}[] The rotation values on this object. *Defaults to an empty array*
 ---@field ContainedObjects? SpawnObjectData.Data[] The contained objects in this object. *Defaults to an empty array*
 ---The properties of the Mp3Player. ⚠️ Only valid for the Built-in MP3Player object.
 ---@field Mp3Player? {songTitle: string, genre: string, volume: float, isPlaying: bool, loopOne: bool, menuTitle: string, menu: int}
@@ -117,10 +117,10 @@
 ---Table with properties describing the object that will be spawned. Required content depends on the type of the object being spawned.
 ---@field data SpawnObjectData.Data
 ---Position where the object will be spawned. When specified, overrides the `Transform` position in `data`.
----@field position? Vector
----@field rotation? Vector Rotation of the spawned object. When specified, overrides the `Transform` rotation in `data`.
+---@field position? VectorLike
+---@field rotation? VectorLike Rotation of the spawned object. When specified, overrides the `Transform` rotation in `data`.
 ---Scale of the spawned object. When specified, overrides the `Transform` scale in `data`. *Optional, defaults to `nil`*
----@field scale? Vector
+---@field scale? VectorLike
 ---Callback function to be called after the object has finished spawning. *Optional, defaults to `nil`*
 ---@field callback_function? fun(obj: Object):any
 
@@ -136,9 +136,9 @@
 ---JSON string describing the object that will be spawned
 ---@field data string
 ---Position where the object will be spawned. When specified, overrides the `Transform` position in `json`.
----@field position? Vector
----@field rotation? Vector Rotation of the spawned object. When specified, overrides the `Transform` rotation in data.
+---@field position? VectorLike
+---@field rotation? VectorLike Rotation of the spawned object. When specified, overrides the `Transform` rotation in data.
 ---Scale of the spawned object. When specified, overrides the `Transform` scale in data. *Optional, defaults to `nil`*
----@field scale? Vector
+---@field scale? VectorLike
 ---Callback function to be called after the object has finished spawning. *Optional, defaults to `nil`*
 ---@field callback_function? fun(obj: Object):any

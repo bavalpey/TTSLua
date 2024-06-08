@@ -22,8 +22,8 @@ Physics = {}
 
 ---The table used by the `Physics.cast` function to specify the parameters of the cast.
 ---@class CastParameters
----@field origin? Vector Position of the starting point. *Optional, defaults to {x=0, y=0, z=0}*
----@field direction? Vector The direction of the cast. *Optional, but cast is motionless without a direction*
+---@field origin? VectorLike Position of the starting point. *Optional, defaults to {x=0, y=0, z=0}*
+---@field direction? VectorLike The direction of the cast. *Optional, but cast is motionless without a direction*
 ---
 
 ---The table returned by the `Physics.cast` function containing information about the hit Objects.

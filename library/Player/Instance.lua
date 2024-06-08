@@ -25,7 +25,7 @@ local PlayerInstance = {}
 ---The parameters passed to `attachCameraToObject`.
 ---@class AttachCameraToObjectParameters
 ---@field object Object The object to attach the camera to.
----@field offset? Vector A Vector to offset the camera by. *Optional, defaults to {x=0, y=0, z=0}*
+---@field offset? VectorLike A Vector to offset the camera by. *Optional, defaults to {x=0, y=0, z=0}*
 
 ---Makes a Player's camera follow an object
 ---@param parameters AttachCameraToObjectParameters A table with parameters which guide the function.
@@ -45,7 +45,7 @@ function PlayerInstance.attachCameraToObject(parameters) end
 ---Print message on Player's screen and their game chat log.
 ---
 ---@param message string The Message to be displayed.
----@param message_color Color Tint of the message text. *Optional, defaults to {r=1, g=1, b=1}*
+---@param message_color ColorLike Tint of the message text. *Optional, defaults to {r=1, g=1, b=1}*
 ---
 ---***
 ---
@@ -194,7 +194,7 @@ function PlayerInstance.getSelectedObjects() end
 function PlayerInstance.kick() end
 
 ---@class LookAtParameters
----@field position Vector The position to look at.
+---@field position VectorLike The position to look at.
 ---@field pitch? float Pitch angle of the camera. 0 to 90. *Optional, defaults to 0*
 ---@field yaw? float Yaw angle of the camera. 0 to 360. *Optional, defaults to 0*
 ---@field distance? float Distance the camera is from the position Vector. *Optional, defaults to 40*
@@ -265,7 +265,7 @@ function PlayerInstance.ping(position) end
 ---Prints a message into the Player's game chat.
 ---
 ---@param message string The text to be displayed.
----@param message_color Color The color the text will be tinted. *Optional, defaults to {r=1, g=1, b=1}*
+---@param message_color ColorLike The color the text will be tinted. *Optional, defaults to {r=1, g=1, b=1}*
 ---
 ---***
 ---

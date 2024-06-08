@@ -20,11 +20,11 @@
 ---Where the joint is attached to on this object, relative to this object's center.
 ---*Optional, defaults to {x=0, y=0, z=0}*
 ---<ul><b>⚠️ Not officially documented for Spring Joints</b></ul>
----@field anchor? Vector
+---@field anchor? VectorLike
 ---Where to attach the joint on the object the joint is connecting to, relative to the object's center.
 ---*Optional, default depends on position of the objects*
 ---<ul><b>⚠️ Not officially documented for Spring Joints</b></ul>
----@field connector_anchor? Vector
+---@field connector_anchor? VectorLike
 ---@field spring? float How much spring force to apply to keep the objects together. *Optional, defaults to 10*
 ---@field damper? float How much damper force to apply to dampen the spring joint. *Optional, defaults to 0.2*
 ---The maximum distance the spring can expand to, relative to the initial distance between the objects when the joint is applied.
@@ -90,13 +90,13 @@
 ---Torque required to break the joint. *Optional, defaults to infinity*
 ---<ul><b>⚠️ This parameter is spelled as "break_torgue" internally</b></ul>
 ---@field break_torgue? float
----@field axis? Vector The axis the hinge joint will rotate around. *Optional, defaults to {x=1, y=0, z=0}*
+---@field axis? VectorLike The axis the hinge joint will rotate around. *Optional, defaults to {x=1, y=0, z=0}*
 ---Where the joint is attached to on this object, relative to this object's center.
 ---*Optional, defaults to {x=0, y=0, z=0}*
----@field anchor? Vector
+---@field anchor? VectorLike
 ---Where to attach the joint on the object the joint is connecting to, relative to the object's center.
 ---*Optional, default depends on position of the objects*
----@field connector_anchor? Vector
+---@field connector_anchor? VectorLike
 ---How much force to use to rotate the joint. *Optional, defaults to 0*
 ---@field motor_force? float
 ---How fast the motor will rotate the joint in degrees per second. *Optional, defaults to 0*
@@ -152,11 +152,11 @@
 ---Where the joint is attached to on this object, relative to this object's center.
 ---*Optional, defaults to {x=0, y=0, z=0}*
 ---<ul><b>⚠️ Not officially documented for Fixed Joints</b></ul>
----@field anchor? Vector
+---@field anchor? VectorLike
 ---Where to attach the joint on the object the joint is connecting to, relative to the object's center.
 ---*Optional, default depends on position of the objects*
 ---<ul><b>⚠️ Not officially documented for Fixed Joints</b></ul>
----@field connector_anchor? Vector
+---@field connector_anchor? VectorLike
 ---
 ---***
 ---

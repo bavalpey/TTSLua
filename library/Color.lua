@@ -289,10 +289,6 @@ function Color:equals(otherCol, num) end
 ---
 function Color:Lerp(otherCol, fraction) end
 
-local x = Color()
-
-x:Lerp({ 1, 2, 3, 4 }, 2)
-
 ---Return a string description of a color with an optional `prefix`.
 ---@return string 1 The string description of the color.
 ---@return float 2 An errant value returned by the last gsub used in the internal function.

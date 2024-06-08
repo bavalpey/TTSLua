@@ -269,8 +269,8 @@
 ---The path/URL for the [custom token](https://kb.tabletopsimulator.com/custom-content/custom-token/) image.
 ---@field image string
 ---How accurately the token shape will trace image edge (in pixels). *Optional, defaults to 15*
----@field merge_distance float
----@field stackable bool Whether these tokens stack together into a pile. *Optional, defaults to false*
+---@field merge_distance? float
+---@field stackable? bool Whether these tokens stack together into a pile. *Optional, defaults to false*
 ---
 ---***
 ---

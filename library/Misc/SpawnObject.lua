@@ -1,5 +1,5 @@
 ---@meta SpawnObject
-
+    
 ---The parameters used by the `spawnObject()` function
 ---
 ---@see SpawnObject
@@ -74,7 +74,7 @@
 ---When true, the object will automatically raise above other potential collisions and ignore collisions when held.
 ---@field Autoraise? bool
 ---@field DragSelectable? bool Whether the object should be included in drag-selections.
----@field HideWhenFaceDown bool Whether the object should be hidden when face down (Usually meant for cards and tokens)
+---@field HideWhenFaceDown? bool Whether the object should be hidden when face down (Usually meant for cards and tokens)
 ---@field Hands? bool Whether the object should be able to enter player hands
 ---@field Sticky? bool When true, picked up objects above this one will be attached to it.
 ---@field Tooltip? bool Whether the object should show a tooltip *Default depends on the object type*
@@ -86,7 +86,7 @@
 ---@field LuaScript? string The Lua script on the object *Defaults to an empty string*
 ---Whether the measure tool will automatically be used when moving the object. *Defaults to `false`*
 ---@field MeasureMovement? bool
----@field LuaScriptState string A json string for the Lua script state on the object *Defaults to an empty string*
+---@field LuaScriptState? string A json string for the Lua script state on the object *Defaults to an empty string*
 ---@field XmlUI? string The string of the XML UI of the object *Defaults to an empty string*
 ---@field RotationValues? {Value: int, Rotation: Vector}[] The rotation values on this object. *Defaults to an empty array*
 ---@field ContainedObjects? SpawnObjectData.Data[] The contained objects in this object. *Defaults to an empty array*
@@ -94,14 +94,14 @@
 ---@field Mp3Player? {songTitle: string, genre: string, volume: float, isPlaying: bool, loopOne: bool, menuTitle: string, menu: int}
 ---@field Counter? {value: int} The properties of the Counter. ⚠️ Only valid for the Built-in Counter object.
 ---The properties of the revealer on the object should it reveal the Fog of War, and if so, the properties of the revealer.
----@field FogOfWarRevealer FogOfWarRevealParameters
+---@field FogOfWarRevealer? FogOfWarRevealParameters
 ---The Custom Mesh on this object. ⚠️ Only valid for Custom Model objects!
 ---@field CustomMesh? SpawnObjectData.Data.CustomMesh
 ---@field tags? string[] The tags on the object.
 ---# 🚨 Unknown.
----@field MaterialIndex int
+---@field MaterialIndex? int
 ---# 🚨 Unknown.  Related to the custom mesh
----@field MeshIndex int
+---@field MeshIndex? int
 ---# 🚨 Unknown.  Included on empty bags and infinite bags
 ---@field Number? int
 

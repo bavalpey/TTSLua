@@ -488,7 +488,7 @@ function showHotkeyConfig() end
 
 ---Print an on-screen message to all Players, as well as their in-game chat.
 ---@param message string The message to be displayed.
----@param message_tint? Color The color of the message.
+---@param message_tint? ColorLike The color of the message.
 ---
 ---***
 ---

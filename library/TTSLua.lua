@@ -1,8 +1,24 @@
 ---@meta TTSLua
 
+--- builtin types
+---@class unknown
+---@class any
+---@class nil
+---@class boolean
+---@class true: boolean
+---@class false: boolean
+---@class number
+---@class integer: number
+---@class table<K, V>: { [K]: V }
+---@class string: stringlib
+---@class userdata
+---@class lightuserdata
+---@class function
+
 ---@alias (exact) float number
 ---@alias (exact) int integer
 ---@alias (exact) bool boolean
+
 
 ---@type Object|Global
 self = ...

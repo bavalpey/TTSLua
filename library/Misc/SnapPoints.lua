@@ -19,11 +19,11 @@
 ---@class SnapPoint.Parameters
 ---[Local Position](https://api.tabletopsimulator.com/types/#position) for the snap point. When attached to an object,
 ---position is relative to the object's center.
----@field position Vector
+---@field position? Vector
 ---[Local Rotation](https://api.tabletopsimulator.com/types/#rotation) for the snap point. When attached to an object,
 ---rotation is relative to the object's center.
----@field rotation Vector
+---@field rotation? Vector
 ---Whether the snap point should be a [rotation snap point](https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap).
----@field rotation_snap bool
+---@field rotation_snap? bool
 ---Table of `strings` to assign as [tags](https://api.tabletopsimulator.com/game-tools/object-tags/) to the snap point.
----@field tags string[]
+---@field tags? string[]

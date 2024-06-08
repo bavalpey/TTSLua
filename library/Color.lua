@@ -48,7 +48,7 @@
 Color = {}
 
 ---A table with r, g, b, and a components. Any methods that accept a `Color` object can also accept a table with these keys.
----@class (exact) RGBATable: float[]
+---@class (exact) RGBATable
 ---@field r? float Red component. When not present, defaults to 0.
 ---@field g? float Green component. When not present, defaults to 0.
 ---@field b? float Blue component. When not present, defaults to 0.

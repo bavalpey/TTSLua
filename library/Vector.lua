@@ -7,13 +7,13 @@
 ---target = Vector(1, 0, 0) + Vector(0, 2, 0):normalized()
 ---```
 
----@class Vector: float[]
+---@class Vector
 ---@field [1] float
 ---@field [2] float
 ---@field [3] float
----@field x? float
----@field y? float
----@field z? float
+---@field x float
+---@field y float
+---@field z float
 ---@overload fun(x?: float, y?: float, z?: float):Vector
 ---@overload fun(v: VectorLike):Vector
 ---@operator add(VectorLike):Vector
@@ -27,7 +27,7 @@
 Vector = {}
 
 ---A table with x, y, and z keys that all have float values. Any function that accepts a Vector will also accept this.
----@class XYZTable: float[]
+---@class XYZTable
 ---@field x? float The x component. If not present, defaults to 0.
 ---@field y? float The y component. If not present, defaults to 0.
 ---@field z? float The z component. If not present, defaults to 0.

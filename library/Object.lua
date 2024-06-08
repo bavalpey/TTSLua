@@ -159,6 +159,42 @@ function Object.getBounds() end
 ---
 function Object.getBoundsNormalized() end
 
+---Returns the current position of the Object.
+---@return Vector
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/object/#getposition)
+---
+function Object.getPosition() end
+
+---Returns a Vector of the current smooth move target if the object is smooth moving, otherwise returns `nil`.
+---@return Vector
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/object/#getposition)
+---
+function Object.getPositionSmooth() end
+
+---Returns the current rotation of the Object.
+---@return Vector
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/object/#getrotation)
+---
+function Object.getRotation() end
+
+---Returns a Vector of the current smooth rotation target if the object is smooth moving, otherwise returns `nil`.
+---@return Vector
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/object/#getrotationsmooth)
+---
+function Object.getRotationSmooth() end
+
 ---Returns a Vector of the current scale. Scale is not an absolute measurement, it is a multiple of the Object's
 ---default model size. So {x=2, y=2, z=2} would be a model twice its default size, not 2 units large.
 ---@return Vector
@@ -240,6 +276,15 @@ function Object.getTransformRight() end
 ---[Open Documentation](https://api.tabletopsimulator.com/object/#gettransformup)
 ---
 function Object.getTransformUp() end
+
+---Returns a Vector of the current velocity.
+---@return Vector
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/object/#getvelocity)
+---
+function Object.getVelocity() end
 
 ---Returns a Table of Vector information describing the size of the merged renderers on an object in Global terms, as
 ---if it was rotated to {0,0,0}. [Bounds](https://docs.unity3d.com/2019.1/Documentation/ScriptReference/Bounds.html)

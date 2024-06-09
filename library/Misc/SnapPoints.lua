@@ -16,10 +16,6 @@
 ---with the snap point.
 ---@field tags string[]
 
----For some insane reason, when passing a table to `object.createSnapPoint`,
----see
----@class SnapPointVector
-
 ---@class SnapPoint.Parameters
 ---[Local Position](https://api.tabletopsimulator.com/types/#position) for the snap point. When attached to an object,
 ---position is relative to the object's center.

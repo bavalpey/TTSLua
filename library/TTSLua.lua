@@ -19,7 +19,6 @@
 ---@alias (exact) int integer
 ---@alias (exact) bool boolean
 
-
 ---@type Object|Global
 self = ...
 

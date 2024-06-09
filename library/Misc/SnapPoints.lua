@@ -16,13 +16,17 @@
 ---with the snap point.
 ---@field tags string[]
 
+---For some insane reason, when passing a table to `object.createSnapPoint`,
+---see
+---@class SnapPointVector
+
 ---@class SnapPoint.Parameters
 ---[Local Position](https://api.tabletopsimulator.com/types/#position) for the snap point. When attached to an object,
 ---position is relative to the object's center.
----@field position? VectorLike
+---@field position? Vector | XYTable | float[]
 ---[Local Rotation](https://api.tabletopsimulator.com/types/#rotation) for the snap point. When attached to an object,
 ---rotation is relative to the object's center.
----@field rotation? VectorLike
+---@field rotation? Vector | XYTable | float[]
 ---Whether the snap point should be a [rotation snap point](https://kb.tabletopsimulator.com/game-tools/snap-point-tool/#rotation-snap).
 ---@field rotation_snap? bool
 ---Table of `strings` to assign as [tags](https://api.tabletopsimulator.com/game-tools/object-tags/) to the snap point.

@@ -26,12 +26,21 @@
 ---
 Vector = {}
 
----A table with x, y, and z keys that all have float values. Any function that accepts a Vector will also accept this.
+---A table with x, y, and z keys that all have float values. Almost any function<sup>†</sup> that accepts a Vector will
+---also accept this.
+---> #### ⚠️ Warning
+---> It is highly recommended to use the `Vector()` constructor expilcitly instead of a table like this.
+---> See https://tabletopsimulator.nolt.io/2298
 ---@class XYZTable
 ---@field x? float The x component. If not present, defaults to 0.
 ---@field y? float The y component. If not present, defaults to 0.
 ---@field z? float The z component. If not present, defaults to 0.
 
+---Similar to `XYZTable`, except x and y are required.
+---@class XYTable: XYZTable
+---@field x float
+---@field y float
+---@field z? float
 
 ---@alias VectorLike Vector | XYZTable
 
@@ -41,6 +50,16 @@ Vector = {}
 ---@param z float
 ---@return Vector
 function Vector.new(x, y, z) end
+
+---Return a vector with specified (x, y, z) components from the table.
+---@param v VectorLike # A table.
+---@return Vector
+function Vector.new(v) end
+
+---Return a vector with all components set to 0.
+---@return Vector # A vector with all components set to 0.
+function Vector.new() end
+
 ---Returns a vector that is made from the smallest components of two vectors.
 ---@param vec1 VectorLike First vector.
 ---@param vec2 VectorLike Second vector.
@@ -133,7 +152,7 @@ function Vector:set(x, y, z) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#get)
 ---
-function Vector.get() end
+function Vector:get() end
 
 ---Returns a separate Vector with identical component values.
 ---@return Vector
@@ -149,7 +168,7 @@ function Vector.get() end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#copy)
 ---
-function Vector.copy() end
+function Vector:copy() end
 
 ---	Adds components of otherVec to self.
 ---@param otherVec VectorLike The vector to add.

@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/LuaLS/LLS-Addons/main/schemas/addon_config.schema.json",
     "name": "TTSLua",
     "description": "Provides definitions for Tabletop Simulator's Lua API",
-    "files": ["Global%.%-1%.lua", ".+%.[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]%.lua$"],
+    "files": ["Global%.%-1%.lua", ".+%.[a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9][a-z0-9]%.lua$", "%.ttslua"],
     "settings": {
         "Lua.diagnostics.disable": ["lowercase-global"],
         "Lua.runtime.version": "Lua 5.2",

@@ -402,7 +402,7 @@ function Vector:rotateOver(axis, angle) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#dot)
 ---
-function Vector.dot(vec1, vec2) end
+function Vector:dot(vec1, vec2) end
 
 ---Returns the length of this vector.
 ---@return float
@@ -439,7 +439,7 @@ function Vector:sqrMagnitude() end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#distance)
-function Vector.distance(p1, p2) end
+function Vector:distance(p1, p2) end
 
 ---Returns squared distance between two points.
 ---@param p1 VectorLike First point.
@@ -453,7 +453,7 @@ function Vector.distance(p1, p2) end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#distance)
-function Vector.sqrDistance(p1, p2) end
+function Vector:sqrDistance(p1, p2) end
 
 ---Returns true if two vectors are approximately equal. The ``margin`` argument is optional and defaults to tolerating a difference of ``~0.03`` in both vector magnitude.
 ---@param vec1 VectorLike First vector.
@@ -467,7 +467,7 @@ function Vector.sqrDistance(p1, p2) end
 ---```
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#equals)
-function Vector.equals(vec1, vec2, margin) end
+function Vector:equals(vec1, vec2, margin) end
 
 ---Return string describing self, optional string prefix
 ---@param prefix? string
@@ -501,7 +501,7 @@ function Vector:string(prefix) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#angle)
 ---
-function Vector.angle(vec1, vec2) end
+function Vector:angle(vec1, vec2) end
 
 ---Return a cross-product vector of two vectors.
 ---
@@ -525,7 +525,7 @@ function Vector.angle(vec1, vec2) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#cross)
 ---
-function Vector.cross(vec1, vec2) end
+function Vector:cross(vec1, vec2) end
 
 ---Linearly interpolates between two points.
 ---Interpolates between the points a and b by the interpolant t. The parameter t is clamped to the
@@ -548,7 +548,7 @@ function Vector.cross(vec1, vec2) end
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/vector/#lerp)
 ---
-function Vector.lerp(p1, p2, t) end
+function Vector:lerp(p1, p2, t) end
 
 ---Return a new vector that is normalized (length 1) version of self.
 ---@return Vector

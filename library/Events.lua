@@ -1,6 +1,6 @@
 ---@meta Events
 
----# ⚠️ TODO: Make this work as an abstract base class. See  https://github.com/LuaLS/lua-language-server/issues/2453
+---# 🛠️ TODO: Make this work as an abstract base class. See  https://github.com/LuaLS/lua-language-server/issues/2453
 
 ---# Events
 ---Games frequently need to execute code in response to some action, interaction, or change takign place in the game,

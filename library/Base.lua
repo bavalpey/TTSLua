@@ -437,7 +437,7 @@ function addHotkeyCallback(playerColor, hoveredObject, pointerPosition, isKeyUp)
 ---Add a bindable hotkey to the game.
 ---
 --->### 🔥 Important
---->Added are unable to persist between loads/rewinds, because the bound callback function may no longer exist.
+--->Added hotkeys are unable to persist between loads/rewinds, because the bound callback function may no longer exist.
 --->Therefore this function needs to be called each time the game is loaded. As long as the same labels are used,
 --->then player hotkey bindings will persist.
 ---@param label string

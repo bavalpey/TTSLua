@@ -1,5 +1,5 @@
 ---@meta SpawnObject
-    
+
 ---The parameters used by the `spawnObject()` function
 ---
 ---@see SpawnObject

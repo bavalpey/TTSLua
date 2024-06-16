@@ -458,8 +458,8 @@ function Object.setRotation(vector) end
 
 ---Smoothly rotates this Object to the given orientation in degrees.
 ---@param rotation VectorLike A [rotational](https://api.tabletopsimulator.com/types/#rotation) vector.
----@param collide bool
----@param fast bool
+---@param collide? bool
+---@param fast? bool
 ---@return bool
 ---
 ---***

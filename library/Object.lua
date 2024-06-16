@@ -537,9 +537,19 @@ function Object.getTags() end
 ---
 ---***
 ---
----[Open Documentation](https://api.tabletopsimulator.com/object/#hastags)
+---[Open Documentation](https://api.tabletopsimulator.com/object/#hasanytag)
 ---
-function Object.hasTags() end
+function Object.hasAnyTag() end
+
+---Return whether this Object has the specified tag.
+---@param tag string The tag
+---@return bool # True if this object has the tag, false if it does not.
+---
+---***
+---
+---[Open Documentation](https://api.tabletopsimulator.com/object/#hastag)
+---
+function Object.hasTag(tag) end
 
 ---Return whether this Object and the specified `Other` object share at least one tag in common.
 ---@param other Object The other object to compare tags with.

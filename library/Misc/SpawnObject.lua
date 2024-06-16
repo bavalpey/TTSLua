@@ -134,7 +134,7 @@
 ---@see Object.getJSON
 ---@class SpawnObjectJSON.Parameters
 ---JSON string describing the object that will be spawned
----@field data string
+---@field json string
 ---Position where the object will be spawned. When specified, overrides the `Transform` position in `json`.
 ---@field position? VectorLike
 ---@field rotation? VectorLike Rotation of the spawned object. When specified, overrides the `Transform` rotation in data.

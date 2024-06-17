@@ -1539,8 +1539,8 @@ function Object.cut(count) end
 ---item to a hand zone, it is a good idea to make sure that its
 ---[Member Variable](https://api.tabletopsimulator.com/object/#member-variables) for `use_hands` is `true`.
 ---@param number int How many to deal
----@param player_color string The [Player Color](https://api.tabletopsimulator.com/player/colors/) to deal to.<br>&emsp;&emsp;*Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.*
----@param index int Index of hand zone to deal to.<br>&emsp;&emsp;*Optional, defaults to the first created hand zone.*
+---@param player_color? string The [Player Color](https://api.tabletopsimulator.com/player/colors/) to deal to.<br>&emsp;&emsp;*Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.*
+---@param index? int Index of hand zone to deal to.<br>&emsp;&emsp;*Optional, defaults to the first created hand zone.*
 ---@return bool
 ---
 ---***

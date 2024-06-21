@@ -52,7 +52,7 @@
 local Events = {}
 
 ---Called when a player puts on or takes off their blindfold.
----@param player Player Player who put on or took off their blindfold.
+---@param player PlayerInstance Player who put on or took off their blindfold.
 ---@param blindfolded bool Whether the player is now blindfolded
 ---
 ---### Example Usage
@@ -70,10 +70,4 @@ local Events = {}
 ---***
 ---
 ---[Open Documentation](https://api.tabletopsimulator.com/events/onblindfold/)
-function Events.onblindfold(player, blindfolded) end
-
---[[
----@type fun(player: Player, blindfolded: bool)
-onBlindfold = nil
-]]
---
+function Events.onBlindfold(player, blindfolded) end

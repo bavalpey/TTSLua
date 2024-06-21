@@ -22,6 +22,9 @@
 ---[Open Documentation](https://api.tabletopsimulator.com/player/instance/)
 local PlayerInstance = {}
 
+--- In tabletop simulator docs, `player` is used as shorthand for PlayerInstance
+---@alias player PlayerInstance
+
 ---The parameters passed to `attachCameraToObject`.
 ---@class AttachCameraToObjectParameters
 ---@field object Object The object to attach the camera to.

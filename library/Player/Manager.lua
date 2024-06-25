@@ -10,6 +10,56 @@
 ---@class Player: userdata
 Player = {}
 
+---## Actions
+
+---The [onPlayerAction](https://api.tabletopsimulator.com/events/#onplayeraction) event allows you to handle player
+---actions. A list of player actions is available as `Player.Action`.
+---### Example
+---Log all available player actions:
+---```
+---log(Player.Action)
+---```
+---For more details about these actions, please refer to the documentation for [onPlayerAction](https://api.tabletopsimulator.com/events/#onplayeraction).
+---@enum Player.Action
+Player.Action = {
+    --- Copy (or commence cloning) the targets.
+    Copy = 0,
+    ---Cut (copy and delete) the targets.
+    Cut = 1,
+    ---Delete the targets.
+    Delete = 2,
+    ---Incrementally rotate the targets counter-clockwise around their flip axes, typically the scene's Z-axis.
+    FlipIncrementalLeft = 3,
+    ---Incrementally rotate the targets clockwise around their flip axes, typically the scene's Z-axis.
+    FlipIncrementalRight = 4,
+    ---Rotate the targets 180 degrees around their flip axes, typically the scene's Z-axis i.e. toggle the targets
+    ---between face up and face down.
+    FlipOver = 5,
+    ---Group the targets.
+    Group = 6,
+    ---Paste (spawn) the targets.
+    Paste = 7,
+    ---Pick up the targets.
+    PickUp = 8,
+    ---Randomize the targets.
+    Randomize = 9,
+    ---Rotate the targets incrementally counter-clockwise around the scene's Y-axis.
+    --->### 🔥 Important
+    --->Instead of being rotated exclusively around the Y-axis, dice will be rotated to the previous rotation value.
+    RotateIncrementalLeft = 10,
+    ---Rotate the targets incrementally clockwise around the scene's Y-axis.
+    --->### 🔥 Important
+    --->Instead of being rotated exclusively around the Y-axis, dice will be rotated to the next rotation value.
+    RotateIncrementalRight = 11,
+    ---Rotate the targets 180 degrees around the scene's Y-axis.
+    RotateOver = 12,
+    ---Add the targets to the player's selection.
+    Select  = 13,
+    ---Move the targets underneath objects below them on the table.
+    Under = 14,
+}
+
+
 ---Gets a table of strings of every valid seat color at the current table. Returned colors are in the default order.
 ---
 ---@return string[] # A table of strings of every valid seat color at the current table.

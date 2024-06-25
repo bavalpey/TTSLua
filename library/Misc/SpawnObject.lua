@@ -16,6 +16,10 @@
 ---Callback function to be called after the object has been spawned. *Optional, defaults to `nil`*
 ---@field callback_function? fun(obj: Object):any
 
+---The type of the parameter passed to the "Transform" field of `SpawnObjectData.Data`.
+---
+---⚠️ One of scaleX, scaleY, and scaleZ must be nonzero when given to a `SpawnObjectData()` call, otherwise, a runtime
+---error will occur
 ---@class SpawnObjectData.Data.Transform
 ---@field posX? float
 ---@field posY? float
@@ -58,7 +62,10 @@
 ---@class SpawnObjectData.Data
 ---@field GUID? string ⚠️ You probably shouldn't set this field.  Let TTS assign it automatically.
 ---@field Name? SpawnObjectType The internal name of the object (e.g. Calculator, rpg_BEAR).<br>&emsp;&emsp;⚠️ This is not the same as nickname.<br>&emsp;&emsp; ⚠️ You cannot spawn a Table
----@field Transform? SpawnObjectData.Data.Transform
+---The transform of the object (rotation, scale and position). <br>&emsp;&emsp;⚠️  If all three scale dimensions are 0,
+---`spawnObjectData()` will result in a runtime error. As such, this field is marked 'required' since, if it is not
+---provided, the default value of 0 will be used for all three scale dimensions, resulting in said runtime error.
+---@field Transform SpawnObjectData.Data.Transform
 ---@field Nickname? string The nickname of the object that appears on its tooltip
 ---@field Description? string The description of the object that appears on its tooltip *Defaults to an empty string*
 ---@field GMNotes? string The GM notes of the object visible to the Black player *Defaults to an empty string*

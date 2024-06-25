@@ -20,7 +20,7 @@ Player = {}
 ---log(Player.Action)
 ---```
 ---For more details about these actions, please refer to the documentation for [onPlayerAction](https://api.tabletopsimulator.com/events/#onplayeraction).
----@enum Player.Action
+---@enum PlayerAction
 Player.Action = {
     --- Copy (or commence cloning) the targets.
     Copy = 0,

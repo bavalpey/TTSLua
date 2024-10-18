@@ -240,7 +240,7 @@ function Global.getSnapPoints() end
 ---Get the reference to a table variable in the Global script.
 ---
 ---@param table_name string The name of the table to get.
----@return table
+---@return table?
 ---
 ---***
 ---

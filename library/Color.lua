@@ -343,7 +343,7 @@ function Color:dump(prefix) end
 ---***
 ---
 ---See: [Color.Blue](https://api.tabletopsimulator.com/color/#colorblue)
-function Color.add(name, yourColor) end
+function Color.Add(name, yourColor) end
 
 ---Return a string description of a color.
 ---@return string

@@ -1,5 +1,12 @@
 ---@meta PlayerManager
 
+---@alias PlayerRegularColor 'White' | 'Brown' | 'Red' | 'Orange' | 'Yellow' | 'Green' | 'Teal' | 'Blue' | 'Purple' | 'Pink'
+---@alias PlayerGameMasterColor 'Black'
+---@alias PlayerSpectatorColor 'Grey'
+
+---@alias PlayerHandColor PlayerRegularColor | PlayerGameMasterColor
+---@alias PlayerColor PlayerHandColor | PlayerSpectatorColor
+
 ---# Player Manager
 ---`Player` is a global which allows you to retrieve
 ---[Player instances](https://api.tabletopsimulator.com/player/instance/)
@@ -7,7 +14,19 @@
 ---## Actions
 ---The [onPlayerAction](https://api.tabletopsimulator.com/events/#onplayeraction) event allows you to handle player
 ---actions. A list of player actions is available as `Player.Action`.
----@class Player: userdata
+---@class Player: userdata, { [PlayerColor]: PlayerInstance }
+---@field White PlayerInstance
+---@field Brown PlayerInstance
+---@field Red PlayerInstance
+---@field Orange PlayerInstance
+---@field Yellow PlayerInstance
+---@field Green PlayerInstance
+---@field Teal PlayerInstance
+---@field Blue PlayerInstance
+---@field Purple PlayerInstance
+---@field Pink PlayerInstance
+---@field Black PlayerInstance
+---@field Grey PlayerInstance
 Player = {}
 
 ---## Actions
@@ -62,7 +81,7 @@ Player.Action = {
 
 ---Gets a table of strings of every valid seat color at the current table. Returned colors are in the default order.
 ---
----@return string[] # A table of strings of every valid seat color at the current table.
+---@return PlayerHandColor[] # A table of strings of every valid seat color at the current table.
 ---
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/player/manager/#getavailablecolors)
@@ -71,7 +90,7 @@ function Player.getAvailableColors() end
 
 ---Returns a table of strings of every possible seat color. Returned colors are in the default order.
 ---
----@return string[] # A table of strings of every possible seat color.
+---@return PlayerColor[] # A table of strings of every possible seat color.
 ---
 ---***
 ---[Open Documentation](https://api.tabletopsimulator.com/player/manager/#getcolors)

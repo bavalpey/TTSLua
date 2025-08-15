@@ -81,7 +81,7 @@ function Wait.condition(toRunFunc, conditionFunc, timeout, timeoutFunc) end
 
 ---Schedules a function to be executed after the specified number of frames have elapsed.
 ---@param toRunFunc fun():any The function to be executed after the specified number of frames have elapsed.
----@param frames int The number of frames that must elapse before the `toRunFunc` is executed.
+---@param frames int? The number of frames that must elapse before the `toRunFunc` is executed. *Optional, defaults to 1*
 ---@return int # The unique ID of the scheduled function that may be used to [stop](https://api.tabletopsimulator.com/wait/#stop) the scheduled function before it runs.
 ---
 ---***

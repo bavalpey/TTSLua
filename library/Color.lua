@@ -117,6 +117,7 @@ function Color.fromString(colorStr) end
 ---Return a color from a hex string.
 ---
 ---@param hexStr string A hex string representing the color, in the form `"#RRGGBB"`, or `"#RRGGBBAA"`.  The `"#"` character is optional.
+---@return Color
 ---
 ---***
 ---
@@ -234,7 +235,7 @@ function Color:copy() end
 
 ---Returns a hex string for `color`
 ---
----@param includeAlpha bool Whether or not to include the value for `a` *Default true*
+---@param includeAlpha? bool Whether or not to include the value for `a` *Default true*
 ---@return string
 ---
 ---***

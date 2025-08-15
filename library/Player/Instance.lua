@@ -45,7 +45,7 @@ function PlayerInstance.attachCameraToObject(parameters) end
 ---Print message on Player's screen and their game chat log.
 ---
 ---@param message string The Message to be displayed.
----@param message_color ColorLike Tint of the message text. *Optional, defaults to {r=1, g=1, b=1}*
+---@param message_color? ColorLike Tint of the message text. *Optional, defaults to {r=1, g=1, b=1}*
 ---
 ---***
 ---
@@ -121,7 +121,7 @@ function PlayerInstance.getHandCount() end
 function PlayerInstance.getHandObjects(hand_index) end
 
 ---Returns a Table of data on this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/).
----@param index int An index, representing which hand zone to return data on.
+---@param index? int An index, representing which hand zone to return data on. *Optional, defaults to 1*
 ---@return Hands.Transform.Properties # The transform properties of the hand zone.
 ---
 ---***
@@ -304,7 +304,7 @@ function PlayerInstance.setCameraMode(mode) end
 ---Sets transform elements of a [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/).
 ---
 ---@param parameters Hands.Transform.Parameters A table of parameters to transform the hand zone with.
----@param hand_index int An index, representing which hand zone to transform. *Optional, defaults to 1*
+---@param hand_index? int An index, representing which hand zone to transform. *Optional, defaults to 1*
 ---@return bool
 ---
 ---***

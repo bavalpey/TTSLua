@@ -153,9 +153,9 @@ function PlayerInstance.getHoldingObjects() end
 ---
 function PlayerInstance.getHoverObject() end
 
----Returns the position of the player's cursor.
+---Returns the position of the player's pointer.
 ---
----@return Vector # The coordinates of the player's cursor.
+---@return Vector # The coordinates of the player's pointer.
 ---
 ---***
 ---
@@ -163,9 +163,9 @@ function PlayerInstance.getHoverObject() end
 ---
 function PlayerInstance.getPointerPosition() end
 
----Returns the rotation of the player's cursor.
+---Returns the rotation of the player's pointer.
 ---
----@return Vector # The rotation of the player's cursor.
+---@return Vector # The rotation of the player's pointer.
 ---
 ---***
 ---

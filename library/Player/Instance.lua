@@ -159,9 +159,9 @@ function PlayerInstance.getHoverObject() end
 ---
 ---***
 ---
----[Open Documentation](https://api.tabletopsimulator.com/player/instance/#getcursorposition)
+---[Open Documentation](https://api.tabletopsimulator.com/player/instance/#getpointerposition)
 ---
-function PlayerInstance.getCursorPosition() end
+function PlayerInstance.getPointerPosition() end
 
 ---Returns the rotation of the player's cursor.
 ---
@@ -169,9 +169,9 @@ function PlayerInstance.getCursorPosition() end
 ---
 ---***
 ---
----[Open Documentation](https://api.tabletopsimulator.com/player/instance/#getcursorrotation)
+---[Open Documentation](https://api.tabletopsimulator.com/player/instance/#getpointerrotation)
 ---
-function PlayerInstance.getCursorRotation() end
+function PlayerInstance.getPointerRotation() end
 
 ---Objects that the player has selected with an area selection.
 ---

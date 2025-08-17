@@ -32,7 +32,7 @@
 ---> + *@param* `obj` — The Object the button is attached to.<br>
 ---> + *@param* `player_clicker_color` — [Player Color](https://api.tabletopsimulator.com/player/colors/) of the player that pressed the button.<br>
 ---> + *@param* `alt_click` — True if a button other than left-click was used to click the button.
----@field click_function? string
+---@field click_function string 
 ---The Object which contains the click_function. *Optional, Defaults to Global *⚠️ not the object the button is created
 ---on*
 ---@field function_owner? Object|Global

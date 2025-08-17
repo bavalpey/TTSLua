@@ -258,9 +258,9 @@ function PlayerInstance.paste(position) end
 ---
 ---***
 ---
----[Open Documentation](https://api.tabletopsimulator.com/player/instance/#ping)
+---[Open Documentation](https://api.tabletopsimulator.com/player/instance/#pingtable)
 ---
-function PlayerInstance.ping(position) end
+function PlayerInstance.pingTable(position) end
 
 ---Prints a message into the Player's game chat.
 ---

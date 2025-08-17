@@ -21,7 +21,7 @@
 ---@field public g float
 ---@field public b float
 ---@field public a float
----Returns a table of all color strings.
+---Returns a table of all color strings. Includes added colors.
 ---```
 ---data = Color.list
 ----- Same as
@@ -97,7 +97,7 @@ function Color.new(t) end
 
 ---Return a color from a color string ('Red', 'Green' etc), capitalization ignored.
 ---
----@param colorStr string Any [Player Color](https://api.tabletopsimulator.com/player/colors/) or color added with [Color.Add](https://api.tabletopsimulator.com/color/#coloradd).
+---@param colorStr PlayerColor | string Any [Player Color](https://api.tabletopsimulator.com/player/colors/) or color added with [Color.Add](https://api.tabletopsimulator.com/color/#coloradd).
 ---@return Color
 ---
 ---***

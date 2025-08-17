@@ -6,7 +6,7 @@
 ---@class PlayerInstance: userdata
 ---@field admin bool **Read Only** If the player is promoted or the host of the game.
 ---@field blindfolded bool **Read Only** If the player is blindfolded.
----@field color string **Read Only** The player's [Player Color](https://api.tabletopsimulator.com/player/colors/).
+---@field color PlayerColor **Read Only** The player's [Player Color](https://api.tabletopsimulator.com/player/colors/).
 ---@field host bool **Read Only** If the player is the host.
 ---The lift height for the player. This is how far an object is raised when held in a player's hand.
 ---Value is ranged 0 to 1.
@@ -55,7 +55,7 @@ function PlayerInstance.broadcast(message, message_color) end
 
 ---Changes player to this [Player Color](https://api.tabletopsimulator.com/player/colors/) (seat).
 ---
----@param player_color string The [Player Color](https://api.tabletopsimulator.com/player/colors/) to move the player to.
+---@param player_color PlayerColor The [Player Color](https://api.tabletopsimulator.com/player/colors/) to move the player to.
 ---
 ---***
 ---
@@ -108,7 +108,7 @@ function PlayerInstance.getHandCount() end
 
 ---Return a Table of Objects that are in this [hand zone](https://kb.tabletopsimulator.com/host-guides/player-hands/).
 ---
----@param hand_index int An index, representing which hand zone to return Objects for. *Optional, defaults to 1*
+---@param hand_index? int An index, representing which hand zone to return Objects for. *Optional, defaults to 1*
 ---@return Object[] # A table of Objects in the hand zone.
 ---
 --->### Indexing
@@ -375,7 +375,7 @@ function PlayerInstance.showInfoDialog(info) end
 ---Shows the confirm dialog to the player and executes the callback if they click OK.
 ---
 ---@param info string Information to display.
----@param callback? fun(player_color: string) The callback to execute if they click OK.
+---@param callback? fun(player_color: PlayerColor) The callback to execute if they click OK.
 ---@return bool
 ---
 ---***
@@ -400,7 +400,7 @@ function PlayerInstance.showConfirmDialog(info, callback) end
 ---
 ---@param description? string Optional description of what the player should input.
 ---@param default_text? string Optional default value.
----@param callback? fun(text: string, player_color: string) The callback to execute if they click OK.
+---@param callback? fun(text: string, player_color: PlayerColor) The callback to execute if they click OK.
 ---
 ---***
 ---
@@ -423,7 +423,7 @@ function PlayerInstance.showInputDialog(description, default_text, callback) end
 ---
 ---@param description? string Optional description of what the player should input.
 ---@param default_text? string Optional default value.
----@param callback? fun(text: string, player_color: string) Callback to execute if they click OK.
+---@param callback? fun(text: string, player_color: PlayerColor) Callback to execute if they click OK.
 ---
 ---***
 ---
@@ -447,7 +447,7 @@ function PlayerInstance.showMemoDialog(description, default_text, callback) end
 ---@param description string Description of what the player is choosing.
 ---@param options string[] A table of strings representing the options.
 ---@param default_value int|string Optional default value, an integer index into the options table. Note you may alternatively use the option string itself.
----@param callback fun(option: string, player_color: string) Callback to execute if they click OK.
+---@param callback fun(option: string, player_color: PlayerColor) Callback to execute if they click OK.
 ---
 ---***
 ---
@@ -469,7 +469,7 @@ function PlayerInstance.showOptionsDialog(description, options, default_value, c
 ---Shows the color picker dialogue to the player and executes the callback if they click OK.
 ---
 ---@param default_color? string Optional default color.
----@param callback? fun(color: Color, player_color: string) The callback to execute if they click Apply.
+---@param callback? fun(color: Color, player_color: PlayerColor) The callback to execute if they click Apply.
 ---
 ---***
 ---

@@ -7,11 +7,12 @@
 ---@class Turns
 ---@field enable boolean Enable/disable the turns system.
 ---@field type int If the turn order is automatic or custom. 1=auto, 2=custom.
----@field order string[] A table of strings, representing the player turn order.
+---@field order PlayerColor[] A table of strings, representing the player turn order. Empty table if type = 1.
 ---@field reverse_order bool Enable/disable reversing turn rotation direction.
 ---@field skip_empty bool Enable/disable skipping empty turns of players with empty hands.
 ---@field pass_turns bool Enable/disable a player's ability to pass their turn to another.
----@field turn_color string The color of the Player whose turn it is.
+---@field turn_color PlayerColor The color of the Player whose turn it is. Empty string if disabled.
+---@field disable_interactations bool Enable/disable the blocking of players ability to interact with Objects when it is not their turn.
 ---
 ---***
 ----

@@ -1458,7 +1458,7 @@ function Object.addAttachment(object) end
 ---
 ---
 ---
----@param callback fun(player_color: string, object_position: Vector, object: string) Execute if menu item is selected. Called as callback(`player_color`, `object_position`, `object`)<br>&emsp;&emsp;`player_color` — [Player Color](https://api.tabletopsimulator.com/player/colors/) who selected the menu item.<br>&emsp;&emsp;`object_position` — Position of the object.<br>&emsp;&emsp;`object` — Object in question.
+---@param callback fun(player_color: PlayerColor, object_position: Vector, object: string) Execute if menu item is selected. Called as callback(`player_color`, `object_position`, `object`)<br>&emsp;&emsp;`player_color` — [Player Color](https://api.tabletopsimulator.com/player/colors/) who selected the menu item.<br>&emsp;&emsp;`object_position` — Position of the object.<br>&emsp;&emsp;`object` — Object in question.
 ---@param keep_open? bool Keep context menu open after menu item was selected.<br>&emsp;&emsp;*Optional, Default: keep_open = false. Close context menu after selection.*
 ---@return bool
 ---
@@ -1482,7 +1482,7 @@ function Object.addAttachment(object) end
 function Object.addContextMenuItem(label, callback, keep_open) end
 
 ---Adds this object to the specified player's selection
----@param player_color string
+---@param player_color PlayerColor
 ---@return bool
 ---
 ---***
@@ -1549,7 +1549,7 @@ function Object.cut(count) end
 ---item to a hand zone, it is a good idea to make sure that its
 ---[Member Variable](https://api.tabletopsimulator.com/object/#member-variables) for `use_hands` is `true`.
 ---@param number int How many to deal
----@param player_color? string The [Player Color](https://api.tabletopsimulator.com/player/colors/) to deal to.<br>&emsp;&emsp;*Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.*
+---@param player_color? PlayerColor The [Player Color](https://api.tabletopsimulator.com/player/colors/) to deal to.<br>&emsp;&emsp;*Optional, defaults to an empty string. If not supplied, it will attempt to deal to all seated players.*
 ---@param index? int Index of hand zone to deal to.<br>&emsp;&emsp;*Optional, defaults to the first created hand zone.*
 ---@return bool
 ---

@@ -33,7 +33,7 @@
 ---@field interactable bool If the object can be interacted with by Players. Other object will still be able to interact with it.
 ---@field is_face_down bool **Read Only** If the Object is roughly face-down (like with cards). The face is the "top" of the Object, the direction of its positive Y coordinate.
 ---@field loading_custom bool **Read only** If the Object's custom elements (images/models/etc) are loading.
----@field locked bool
+---@field locked bool If the object is frozen in place (preventing physics interactions).
 ---@field mass float Mass. [Unity rigidbody proerty](https://docs.unity3d.com/2019.1/Documentation/Manual/class-Rigidbody.html).
 ---@field max_typed_number int Determines the maximum number of digits which a user may type whilst hovering over the object.<br><br>As soon as a player types the maximum number of digits, the corresponding behavior (e.g. [onObjectNumberTyped](https://api.tabletopsimulator.com/events/#onobjectnumbertyped)/[onNumberTyped](https://api.tabletopsimulator.com/events/#onnumbertyped)) is triggered immediately, improving responsiveness.
 ---@field measure_movement bool Measure Tool will automatically be used when moving the Object.

@@ -624,9 +624,9 @@ function logStyle(tag, tint, prefix, postfix) end
 ---
 ---***
 ---
----[Open Documentation](https://api.tabletopsimulator.com/base/#printtobrowser)
+---[Open Documentation](https://api.tabletopsimulator.com/base/#print)
 ---
-function printToBrowser(message) end
+function print(message) end
 
 ---Print a message into the in-game chat of all connected players.
 ---@param message string Message to place into players' in-game chats.

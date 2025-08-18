@@ -17,14 +17,18 @@ Physics = {}
 
 ---@alias castTypeEnum
 ---| 1 # Ray (A line)
----| 2 # Box (A cube, rectangle, plane).
----| 3 # Sphere (A round ball. You cannot make ovals.)
+---| 2 # Sphere (A round ball. You cannot make ovals.)
+---| 3 # Box (A cube, rectangle, plane).
 
 ---The table used by the `Physics.cast` function to specify the parameters of the cast.
 ---@class CastParameters
 ---@field origin? VectorLike Position of the starting point. *Optional, defaults to {x=0, y=0, z=0}*
 ---@field direction? VectorLike The direction of the cast. *Optional, but cast is motionless without a direction*
----
+---@field type? castTypeEnum The type of cast. *Optional, defaults to 1 (Ray)*
+---@field size? VectorLike Size of the cast shape. Sphere/Box only. *Size of the cast shape. Sphere/Box only*
+---@field orientation? VectorLike  Rotation of the cast shape. Box only. * Rotation of the cast shape. Box only*
+---@field max_distance? float How far the cast will travel. *Optional, defaults to infinity. Won't move without direction*
+---@field debug? bool If the cast is visualized for the user *Optional, Optional, defaults to false*
 
 ---The table returned by the `Physics.cast` function containing information about the hit Objects.
 ---@class CastReturnTable

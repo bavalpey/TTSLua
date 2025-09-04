@@ -14,20 +14,20 @@ Notes = {}
 ---@field body? string Text to place into the body of the new tab. *Optional, defaults to an empty string*
 ---[Player Color](https://api.tabletopsimulator.com/player/instance/) for the new tab's color. *Optional, defaults to
 ---Grey*
----@field color? Color
+---@field color? PlayerColor
 
 ---Parameters for `editNotebookTab`.
 ---@class Notebooktab.Parameters.Edit
 ---@field index int Index number of the tab to edit.
 ---@field title? string New title for the tab.
 ---@field body? string New text for the tab.
----@field color? Color The [Player Color](https://api.tabletopsimulator.com/player/instance/) the tab should belong to.
+---@field color? PlayerColor The [Player Color](https://api.tabletopsimulator.com/player/instance/) the tab should belong to.
 
 ---@class NotebookTab.Properties
 ---@field index int The 0-based index of the tab.
 ---@field title string The title of the tab.
 ---@field body string The text of the tab.
----@field color Color The [Player Color](https://api.tabletopsimulator.com/player/instance/) that the tab belongs to.
+---@field color PlayerColor The [Player Color](https://api.tabletopsimulator.com/player/instance/) that the tab belongs to.
 
 ---Adds a notebook tab, returning its index.
 ---

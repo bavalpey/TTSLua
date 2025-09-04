@@ -10,7 +10,7 @@
 
 ---Adds a menu item to the Global right-click context menu. Global menu is shown when player right-clicks on empty space or table.
 ---@param label string Label for the menu item.
----@param toRunFunc fun(player_color: string, menu_position: VectorLike) Execute if menu item is selected.<ul>`player_color` — [Player Color](https://api.tabletopsimulator.com/player/colors/) who selected the menu item.<br>`menu_position` — Global position of the right-click context menu.</ul>
+---@param toRunFunc fun(player_color: PlayerColor, menu_position: VectorLike) Execute if menu item is selected.<ul>`player_color` — [Player Color](https://api.tabletopsimulator.com/player/colors/) who selected the menu item.<br>`menu_position` — Global position of the right-click context menu.</ul>
 ---@param keep_open? bool Whether to keep the Context Menu open after menu item was selected. *Optional, Default: keep_open = false*
 ---@param require_table? bool Show Added menu item when right-clicked on empty space or table. *Optional, Default: require_table = false*
 ---
@@ -156,7 +156,7 @@ function getObjectsWithAnyTags(tags) end
 function getObjectsWithAllTags(tags) end
 
 ---Return a Table of the [Player Colors](https://api.tabletopsimulator.com/player/colors/) strings of seated players.
----@return string[] # A table of the player colors of seated players.
+---@return PlayerRegularColor[] # A table of the player colors of seated players.
 ---
 ---***
 ---
@@ -417,7 +417,7 @@ function spawnObjectJSON(parameters) end
 function startLuaCoroutine(function_owner, function_name) end
 
 ---Converts a [Player Color](https://api.tabletopsimulator.com/player/colors/) string to a Color Table for tinting.
----@param player_color string A string of a [Player Color](https://api.tabletopsimulator.com/player/colors/).
+---@param player_color PlayerColor A string of a [Player Color](https://api.tabletopsimulator.com/player/colors/).
 ---@return Color
 ---
 ---***
@@ -428,7 +428,7 @@ function stringColorToRGB(player_color) end
 
 ---The definition for a hotkey callback function, with annotations on the parameters.
 ---@private
----@param playerColor string Player Color of the player that pressed the hotkey.
+---@param playerColor PlayerColor Player Color of the player that pressed the hotkey.
 ---@param hoveredObject Object The object that the Player's pointer was hovering over at the moment the key was pressed/released. `nil` if no object was under the Player's pointer at the time
 ---@param pointerPosition VectorLike World Position of the Player's pointer at the moment the key was pressed/released.
 ---@param isKeyUp bool Whether this callback is being triggered in response to a hotkey being released.
@@ -441,8 +441,8 @@ function addHotkeyCallback(playerColor, hoveredObject, pointerPosition, isKeyUp)
 --->Therefore this function needs to be called each time the game is loaded. As long as the same labels are used,
 --->then player hotkey bindings will persist.
 ---@param label string
----@param toRunFunc fun(playerColor: string, hoveredObject: Object, pointerPosition: Vector, isKeyUp: bool) The function that will be executed whenever the hotkey is pressed, and also when released if triggerOnKeyUp is true.
----@param trigger_on_key_up bool
+---@param toRunFunc fun(playerColor: PlayerColor, hoveredObject: Object, pointerPosition: Vector, isKeyUp: bool) The function that will be executed whenever the hotkey is pressed, and also when released if triggerOnKeyUp is true.
+---@param trigger_on_key_up bool Whether the callback is also executed when the hotkey is released. The callback is always triggered when the hotkey is pressed. *Optional, defaults to false.*
 ---
 ---***
 ---
@@ -507,7 +507,7 @@ function broadcastToAll(message, message_tint) end
 
 ---Print an on-screen message to a specific Player, as well as their in-game chat.
 ---@param message string The message to be displayed.
----@param player_color string [Player Color](https://api.tabletopsimulator.com/player/colors/) to receive the message.
+---@param player_color PlayerColor [Player Color](https://api.tabletopsimulator.com/player/colors/) to receive the message.
 ---@param message_tint? ColorLike RBG color tint for the text.
 ---
 ---***
@@ -530,6 +530,7 @@ function broadcastToColor(message, player_color, message_tint) end
 ---@param value any The value you want to log
 ---@param label? string Text to be logged before `value`.* Defaults to an empty string. Empty strings are not displayed.*
 ---@param tags? string The log tag/style *or* a space separated list of log tags/styles. *Optional, defaults to logging with the <default> log style.*
+---@return bool
 ---
 ---***
 ---
@@ -597,7 +598,7 @@ function log(value, label, tags) end
 function logString(value, label, tags, concise, displayTag) end
 
 ---@param tag string A string identifying this log style.
----@param tint string|Color RBG value to tint the log entry's text. *String color will also work. Example: "Red"
+---@param tint PlayerColor|ColorLike RBG value to tint the log entry's text. *String color will also work. Example: "Red".*
 ---@param prefix? string Text to place before this type of log entry. *Optional, defaults to an empty string. Empty strings are not displayed.*
 ---@param postfix? string Text to place after this type of log entry. *Optional, defaults to an empty string. Empty strings are not displayed.*
 ---@return bool
@@ -648,7 +649,7 @@ function printToAll(message, message_tint) end
 
 ---Print a message into the in-game chat of a specific player.
 ---@param message string Message to place into the player's in-game chat.
----@param player_color string [Player Color](https://api.tabletopsimulator.com/player/colors/) to receive the message.
+---@param player_color PlayerColor [Player Color](https://api.tabletopsimulator.com/player/colors/) to receive the message.
 ---@param message_tint? string|Color RBG value to tint the message. *String color will also work. Example: "Red"
 ---@return bool
 ---
